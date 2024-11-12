@@ -12,6 +12,12 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
   return (
     <div className='artist-page-wrapper'>
       <h1>Artist Page ({id})</h1>
+      {/* renderHeaderImage() */}
+      {/* renderHeaderTitle() */}
+      {/* renderHeaderDesc() */}
+      {/* renderFeaturedExhibitions() */}
+      {/* renderFeaturedProjects() */}
+      {/* renderFooterDesc() */}
     </div>
   );
 };

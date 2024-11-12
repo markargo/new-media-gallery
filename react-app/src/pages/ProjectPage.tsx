@@ -12,7 +12,13 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
   return (
     <div className='project-page-wrapper'>
       <h1>Project Page ({id})</h1>
-    </div>
+      {/* renderHeaderImage() */}
+      {/* renderHeaderTitle() */}
+      {/* renderHeaderDesc() */}
+      {/* renderFeaturedExhibitions() */}
+      {/* renderFooterDesc() */}
+      {/* renderMediaGallery() */}
+      </div>
   );
 };
 
