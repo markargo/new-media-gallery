@@ -1,0 +1,18 @@
+@import "constants";
+
+// Rest of your SCSS code here
+.app-wrapper {
+  width: calc(100% - 40px);
+  height: calc(100vh - 40px);
+  background-color: lime;
+
+  border: 20px solid red;
+}
+
+.app-navigation {
+  padding: 6px;
+  background: rgba(0, 0, 255, 0.2);
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
