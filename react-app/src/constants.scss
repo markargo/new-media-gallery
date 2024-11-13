@@ -130,3 +130,21 @@
   // }
 
 }
+
+body {
+  color: rgb(239, 240, 231);
+}
+
+a {
+  color: rgb(238, 247, 144);
+  text-decoration: none;
+
+  &:visited {
+    color: rgb(247, 216, 144);
+  }
+
+  &:hover {
+    color: rgb(238, 247, 144);
+    text-decoration: underline;
+  }
+}
