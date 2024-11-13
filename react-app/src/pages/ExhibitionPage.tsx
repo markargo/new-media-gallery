@@ -39,18 +39,27 @@ const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
     );
   }
 
-  const renderFeaturedArtists = () => {
+  const renderArtistList = (list: Artist[]) => {
     return (
-      <div className='featured-artists'>
-        Featuring work by: { 
-          featuredArtists.map((artist, index) => {
+      <div className='artist-list-wrapper'>
+        {
+          list.map((artist, index) => {
             return (
-              <span key={ artist.id }>
-                <a href={`/artist/${artist.id}`}>{ artist.name }</a>{ index < featuredArtists.length - 1 ? ', ' : '' }
-              </span>
+              <div key={ artist.id } className='artist-list-item'>
+                <a href={`/artist/${artist.id}`}>{ artist.name }</a>
+              </div>
             );
           }
         )}
+      </div>
+    )
+  }
+
+  const renderFeaturedArtists = () => {
+    return (
+      <div className='featured-artists'>
+        Featuring work by: <br />
+        { renderArtistList(featuredArtists) }
       </div>
     );
   }

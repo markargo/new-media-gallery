@@ -14,6 +14,7 @@ export interface Exhibition {
   endDate: string;
   artists: Artist[];
   mediaGallery: string[];
+  isFeatured?: boolean;
 }
 
 export interface Project {
@@ -79,6 +80,7 @@ export const PLACEHOLDER_PROJECTS: Project[] = [
 
 export const PLACEHOLDER_EXHIBITIONS: Exhibition[] = [
   {
+    isFeatured: true,
     id: 'Fragments2024',
     name: 'Fragments (NM24)',
     img: PLACEHOLDER_IMAGE_LG,

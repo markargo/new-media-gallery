@@ -3,3 +3,18 @@
 .artist-page-wrapper {
   @include page-wrapper();
 }
+
+.artist-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.artist-list-item {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
