@@ -30,7 +30,7 @@ export const PLACEHOLDER_EXHIBITIONS: Exhibition[] = [
   {
     id: 'Fragments2024',
     name: 'Fragments (NM24)',
-    img: 'https://placeholder.co/600x600',
+    img: '/600x600.png',
     desc: 'Fragments showcases the work of artists who explore the concept of fragmentation in their work.',
     footer: 'The Fragments exhibition ran from April 17th 2024 to April 23rd 2024.',
     startDate: '2024-04-17',
@@ -50,11 +50,13 @@ export const PLACEHOLDER_EXHIBITIONS: Exhibition[] = [
       },
     ],
     mediaGallery: [
-      'https://placeholder.co/150x150',
-      'https://placeholder.co/150x150',
-      'https://placeholder.co/150x150',
-      'https://placeholder.co/150x150',
-      'https://placeholder.co/150x150',
+      '/150x150.png',
+      '/150x150.png',
+      '/150x150.png',
+      '/150x150.png',
+      '/150x150.png',
+      '/150x150.png',
+      '/150x150.png',
     ],
   },
   {

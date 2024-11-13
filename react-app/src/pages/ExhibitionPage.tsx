@@ -84,7 +84,6 @@ const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
 
   return (
     <div className='exhibition-page-wrapper'>
-      <h1>Exhibition Page</h1>
       <div className='page-container'>
         {renderHeaderImage()}
         {renderHeaderTitle()}

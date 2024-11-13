@@ -6,17 +6,15 @@ import HomePage from './pages/HomePage';
 import ArtistPage from './pages/ArtistPage';
 import ProjectPage from './pages/ProjectPage';
 import ExhibitionPage from './pages/ExhibitionPage';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
       <div className='app-wrapper'>
-        <div className='app-navigation'>
-          <Link to='/'>Home</Link>&nbsp;|&nbsp; 
-          <Link to='/exhibition/1'>Exhibitions</Link>&nbsp;|&nbsp;
-          <Link to='/artist/1'>Artists</Link>&nbsp;|&nbsp;
-          <Link to='/project/1'>Projects</Link>
-        </div>
+        <Header />
+
 
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -25,6 +23,7 @@ function App() {
           <Route path="/project/:id" element={<ProjectPage />} />
         </Routes>
 
+        <Footer />
       </div>
     </Router>
   );
