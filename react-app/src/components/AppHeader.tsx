@@ -1,12 +1,12 @@
 import React from 'react';
-import './Header.scss';
+import './AppHeader.scss';
 import { Link, useParams } from 'react-router-dom';
 
-interface HeaderProps {
+interface AppHeaderProps {
   // Define your component's props here
 }
 
-const Header: React.FC<HeaderProps> = () => {
+const AppHeader: React.FC<AppHeaderProps> = () => {
   const { id } = useParams();
 
   return (
@@ -24,4 +24,4 @@ const Header: React.FC<HeaderProps> = () => {
   );
 };
 
-export default Header;
+export default AppHeader;

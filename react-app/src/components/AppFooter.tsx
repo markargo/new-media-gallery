@@ -1,12 +1,12 @@
 import React from 'react';
-import './Footer.scss';
+import './AppFooter.scss';
 import { useParams } from 'react-router-dom';
 
-interface FooterProps {
+interface AppFooterProps {
   // Define your component's props here
 }
 
-const Footer: React.FC<FooterProps> = () => {
+const AppFooter: React.FC<AppFooterProps> = () => {
   const { id } = useParams();
 
   return (
@@ -15,4 +15,4 @@ const Footer: React.FC<FooterProps> = () => {
   );
 };
 
-export default Footer;
+export default AppFooter;
