@@ -11,6 +11,7 @@ const AppFooter: React.FC<AppFooterProps> = () => {
 
   return (
     <div className='footer-wrapper'>
+      Made by someone at some point in time for some reason.
     </div>
   );
 };

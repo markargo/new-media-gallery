@@ -1,14 +1,7 @@
 @import "../constants.scss";
 
 .home-page-wrapper {
-  background-color: lightblue;
-
-  width: 100%;
-  height: 100vh;
-
-  h1 {
-    margin: 0;
-    padding: 10px 20px;
-    text-decoration: underline;
-  }
+  @include page-wrapper();
+  // width: 100%;
+  // min-height: calc(100% - 60px);
 }

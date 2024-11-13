@@ -9,6 +9,12 @@
   overflow: hidden;
 }
 
+@mixin page-wrapper() {
+  width: 100%;
+  min-height: calc(100% - 60px);
+  height: 100%;
+}
+
 .page-container {
   @include centered-flexbox();
   // outline: 4px solid magenta;

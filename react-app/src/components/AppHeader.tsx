@@ -12,10 +12,9 @@ const AppHeader: React.FC<AppHeaderProps> = () => {
   return (
     <div className='app-header-wrapper'>
       <div className='app-header-title'>
-        new media
+        <Link to='/'>new media</Link>
       </div>
       <div className='app-header-nav'>
-        <Link to='/'>Home</Link>&nbsp;|&nbsp; 
         <Link to='/exhibition/1'>Exhibitions</Link>&nbsp;|&nbsp;
         <Link to='/artist/1'>Artists</Link>&nbsp;|&nbsp;
         <Link to='/project/1'>Projects</Link>
