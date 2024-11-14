@@ -61,13 +61,14 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
   }
 
   const renderLinks = () => {
-    return (
+    return [
+      renderTextTitle('Links'),
       <div className='artist-links'>
         <a href='#'>Website</a>
         <a href='#'>Instagram</a>
         <a href='#'>Twitter</a>
       </div>
-    );
+    ];
   }
 
   const renderBio = () => {
@@ -100,8 +101,8 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
       <div>
         { renderHeaderImage() }
         { renderHeaderTitle() }
-        { renderLinks() }
         { renderBio() }
+        { renderLinks() }
         { renderProjects() }
         { renderExhibitions() }
         {/* /* renderHeaderTitle() */
