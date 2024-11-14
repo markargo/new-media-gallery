@@ -1,0 +1,23 @@
+@import "../constants.scss";
+
+.artist-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.artist-list-item {
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex: 0 0 100%;
+  }
+}

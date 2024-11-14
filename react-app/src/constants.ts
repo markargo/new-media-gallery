@@ -34,44 +34,44 @@ export const PLACEHOLDER_IMAGE_SM = '/150x150.png'
 
 export const PLACEHOLDER_ARTISTS: Artist[] = [
   {
-    id: 'Artist1',
-    name: 'Artist 1',
+    id: 'Maddy_Gillis',
+    name: 'Madeline Gillis',
   },
   {
-    id: 'Artist2',
-    name: 'Artist 2',
+    id: 'Angelina_Almanza',
+    name: 'Angelina Almanza',
   },
   {
-    id: 'Artist3',
-    name: 'Artist 3',
+    id: 'Marko_Cindric',
+    name: 'Marko Cindric',
   },
   {
-    id: 'Artist4',
-    name: 'Artist 4',
+    id: 'Mary_Frances_Howard',
+    name: 'Mary Frances Howard',
   },
   {
-    id: 'Artist5',
-    name: 'Artist 5',
+    id: 'CJ_Luukkonen',
+    name: 'CJ Luukkonen',
   },
   {
-    id: 'Artist6',
-    name: 'Artist 6',
+    id: 'Nicholas_Pienczak',
+    name: 'Nicholas Pienczak',
   },
   {
-    id: 'Artist7',
-    name: 'Artist 7',
+    id: 'Tyler_Nguyen',
+    name: 'Tyler Nguyen',
   },
   {
-    id: 'Artist8',
-    name: 'Artist 8',
+    id: 'Mad_Holl',
+    name: 'Mad Holl',
   },
   {
-    id: 'Artist9',
-    name: 'Artist 9',
+    id: 'Sara_Abruelish',
+    name: 'Sara Abruelish',
   },
   {
-    id: 'Artist10',
-    name: 'Artist 10',
+    id: 'Natalie_Shupe',
+    name: 'Natlie Shupe',
   },
 ]
 
@@ -82,7 +82,7 @@ export const PLACEHOLDER_EXHIBITIONS: Exhibition[] = [
   {
     isFeatured: true,
     id: 'Fragments2024',
-    name: 'Fragments (NM24)',
+    name: 'NM24: Fragments',
     img: PLACEHOLDER_IMAGE_LG,
     desc: 'Fragments showcases the work of artists who explore the concept of fragmentation in their work.',
     footer: 'The Fragments exhibition ran from April 17th 2024 to April 23rd 2024.',

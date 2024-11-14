@@ -3,6 +3,7 @@ import './ExhibitionPage.scss';
 import { Artist, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS } from '../constants';
 import ExhibitionItem from '../components/ExhibitionItem';
 import { useParams } from 'react-router-dom';
+import ArtistList from '../components/ArtistList';
 
 interface ExhibitionPageProps {
   // Define your component's props here
@@ -54,17 +55,7 @@ const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
 
   const renderArtistList = (list: Artist[]) => {
     return (
-      <div className='artist-list-wrapper'>
-        {
-          list.map((artist, index) => {
-            return (
-              <div key={ artist.id } className='artist-list-item'>
-                <a href={`/artist/${artist.id}`}>{ artist.name }</a>
-              </div>
-            );
-          }
-        )}
-      </div>
+      <ArtistList artists={ list } />
     )
   }
 

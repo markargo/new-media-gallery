@@ -1,6 +1,7 @@
 import React from 'react';
 import './ExhibitionItem.scss';
 import { Exhibition } from '../constants';
+import { Link } from 'react-router-dom';
 
 interface ExhibitionItemProps {
   isLink?: boolean;
@@ -25,9 +26,9 @@ const ExhibitionItem: React.FC<ExhibitionItemProps> = ({ exhibition, isLink=fals
       <div className='exhibition-item'>
         { 
           isLink ? 
-          <a href={`/exhibition/${exhibition.id}`}>
+          <Link to={`/exhibition/${exhibition.id}`}>
             { renderContents() }
-          </a> 
+          </Link> 
           : renderContents() 
         }
       </div>

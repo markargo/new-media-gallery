@@ -2,6 +2,8 @@ import React from 'react';
 import './ArtistPage.scss';
 import { useParams } from 'react-router-dom';
 import { render } from '@testing-library/react';
+import ArtistList from '../components/ArtistList';
+import { PLACEHOLDER_ARTISTS } from '../constants';
 
 interface ArtistPageProps {
   // Define your component's props here
@@ -12,17 +14,7 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
 
   const renderArtistList = () => {
     return (
-      <div className='artist-list-wrapper'>
-        <div className='artist-list-item'>
-          <a href='/artist/1'>Artist 1</a>
-        </div>
-        <div className='artist-list-item'>
-          <a href='/artist/2'>Artist 2</a>
-        </div>
-        <div className='artist-list-item'>
-          <a href='/artist/3'>Artist 3</a>
-        </div>
-      </div>
+      <ArtistList artists={PLACEHOLDER_ARTISTS} />
     );
   }
 
