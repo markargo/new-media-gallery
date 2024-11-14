@@ -20,10 +20,12 @@ export interface Exhibition {
 export interface Project {
   id: string;
   name: string;
+  img: string;
   desc: string;
   startDate: string;
   endDate: string;
-  artists: Artist[];
+  artists: string[];
+  exhibitions: string[];
   mediaGallery: string[];
 }
 
@@ -76,6 +78,60 @@ export const PLACEHOLDER_ARTISTS: Artist[] = [
 ]
 
 export const PLACEHOLDER_PROJECTS: Project[] = [
+  {
+    id: 'Project1',
+    name: 'Project 1',
+    img: PLACEHOLDER_IMAGE_LG,
+    desc: 'Project 1 is a collaborative effort that brings together a diverse group of artists, each contributing their unique perspectives and skills to create a multifaceted experience. The project explores themes of identity, community, and transformation, using a variety of media including painting, sculpture, digital art, and performance. Through this project, the artists aim to challenge conventional notions of art and push the boundaries of their respective disciplines. The exhibition invites viewers to engage with the artworks on a deeper level, encouraging them to reflect on their own experiences and perceptions. By fostering a dialogue between the artists and the audience, Project 1 seeks to create a space for meaningful exchange and connection. The project is not only a showcase of individual talent but also a testament to the power of collaboration and the potential for art to inspire change. Each piece in the exhibition is a testament to the artists dedication and passion, offering a glimpse into their creative processes and the stories behind their work. Project 1 is a celebration of artistic expression and a reminder of the importance of creativity in our lives.',
+    startDate: '2024-04-17',
+    endDate: '2024-04-23',
+    artists: [
+      PLACEHOLDER_ARTISTS[0].id,
+      PLACEHOLDER_ARTISTS[1].id,
+      PLACEHOLDER_ARTISTS[2].id,
+      PLACEHOLDER_ARTISTS[3].id,
+      PLACEHOLDER_ARTISTS[4].id,
+      PLACEHOLDER_ARTISTS[5].id,
+    ],
+    exhibitions: [
+      'Fragments2024',
+    ],
+    mediaGallery: [
+    ]
+  },
+  {
+    id: 'Project2',
+    name: 'Super Long Project Name Two',
+    img: PLACEHOLDER_IMAGE_LG,
+    desc: 'Description for Project 2',
+    startDate: '2024-04-24',
+    endDate: '2024-04-30',
+    artists: [
+      PLACEHOLDER_ARTISTS[8].id,
+    ],
+    exhibitions: [
+      'Fragments2024',
+    ],
+    mediaGallery: [
+    ]
+  },
+  {
+    id: 'Project3',
+    name: 'Project 3',
+    img: PLACEHOLDER_IMAGE_LG,
+    desc: 'Description for Project 3',
+    startDate: '2024-05-01',
+    endDate: '2024-05-07',
+    artists: [
+      PLACEHOLDER_ARTISTS[6].id,
+      PLACEHOLDER_ARTISTS[7].id,
+    ],
+    exhibitions: [
+      'Fragments2024',
+    ],
+    mediaGallery: [
+    ]
+  },
 ]
 
 export const PLACEHOLDER_EXHIBITIONS: Exhibition[] = [
