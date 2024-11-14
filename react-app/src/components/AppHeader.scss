@@ -2,7 +2,7 @@
 
 .app-header-wrapper {
   // position: absolute;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.35);
   // outline: 5px solid red;
   margin: 5px;
 
@@ -26,6 +26,10 @@
   // margin: 0;
     // padding: 10px 20px;
     // text-decoration: underline;
+
+  .title-accent {
+    color: rgba(65, 105, 225, 0.85);
+  }
 }
 
 .app-header-nav {

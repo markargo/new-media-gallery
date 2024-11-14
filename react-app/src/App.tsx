@@ -16,9 +16,11 @@ function App() {
         <AppHeader />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/exhibition/" element={<ExhibitionPage />} />
           <Route path="/exhibition/:id" element={<ExhibitionPage />} />
           <Route path="/artist/" element={<ArtistPage />} />
           <Route path="/artist/:id" element={<ArtistPage />} />
+          <Route path="/project/" element={<ProjectPage />} />
           <Route path="/project/:id" element={<ProjectPage />} />
         </Routes>
         <AppFooter />

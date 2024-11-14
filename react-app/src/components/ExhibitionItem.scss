@@ -1,0 +1,25 @@
+@import "../constants.scss";
+
+.exhibition-item-wrapper {
+  position: relative;
+}
+
+.exhibition-item {
+  width: 100%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.exhibition-item-title {
+  position: absolute;
+  bottom: 1.0rem;
+  left: 1.0rem;
+  background: rgb(31, 31, 31, 0.95);
+  padding: 0.5rem 1.0rem;
+
+  font-size: 2.0rem;
+  font-weight: bold;
+}
+

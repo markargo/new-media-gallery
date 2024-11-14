@@ -12,7 +12,7 @@ const AppHeader: React.FC<AppHeaderProps> = () => {
   return (
     <div className='app-header-wrapper'>
       <div className='app-header-title'>
-        <Link to='/'>new media</Link>
+        <Link to='/'>new media<span className='title-accent'>@tmu</span></Link>
       </div>
       <div className='app-header-nav'>
         <Link to='/exhibition'>Exhibitions</Link>&nbsp;|&nbsp;

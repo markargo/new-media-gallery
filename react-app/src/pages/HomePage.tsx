@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './HomePage.scss';
 import { PLACEHOLDER_EXHIBITIONS } from '../constants';
+import ExhibitionItem from '../components/ExhibitionItem';
 
 interface HomePageProps {
   // Define your component's props here
@@ -16,14 +17,7 @@ const HomePage: React.FC<HomePageProps> = () => {
         { 
           exhibitions.map((ex, index) => {            
             return ex.isFeatured ? (
-              <div key={ ex.id } className='exhibition-item'>
-                <a href={`/exhibition/${ex.id}`}>
-                  <img src={ ex.img } alt='Exhibition' />
-                  <div className='exhibition-title'>
-                    { ex.name }
-                  </div>
-                </a>
-              </div>
+              <ExhibitionItem key={ ex.id } exhibition={ ex } isLink={ true } />
             ) : null;
           })
         }

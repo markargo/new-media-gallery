@@ -1,6 +1,8 @@
 import React from 'react';
 import './ExhibitionPage.scss';
 import { Artist, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS } from '../constants';
+import ExhibitionItem from '../components/ExhibitionItem';
+import { useParams } from 'react-router-dom';
 
 interface ExhibitionPageProps {
   // Define your component's props here
@@ -8,12 +10,23 @@ interface ExhibitionPageProps {
 
 const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
 
+  const { id } = useParams();
+
   const [headerImage, setHeaderImage] = React.useState<string>(PLACEHOLDER_EXHIBITIONS[0].img);
   const [headerTitle, setHeaderTitle] = React.useState<string>(PLACEHOLDER_EXHIBITIONS[0].name);
   const [headerDesc, setHeaderDesc] = React.useState<string>(PLACEHOLDER_EXHIBITIONS[0].desc);
   const [featuredArtists, setFeaturedArtists] = React.useState<Artist[]>(PLACEHOLDER_ARTISTS);
   const [footerDesc, setFooterDesc] = React.useState<string>(PLACEHOLDER_EXHIBITIONS[0].footer);
   const [mediaGallery, setMediaGallery] = React.useState<string[]>(PLACEHOLDER_EXHIBITIONS[0].mediaGallery);
+
+  const renderHeaderItem = () => {
+    return (
+      <ExhibitionItem 
+        exhibition={ PLACEHOLDER_EXHIBITIONS[0] } 
+        isLink={ false } 
+      />
+    )
+  }
 
   const renderHeaderImage = () => {
     return (
@@ -91,15 +104,40 @@ const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
     );
   }
 
-  return (
-    <div className='exhibition-page-wrapper'>
-      <div className='page-container'>
-        {renderHeaderImage()}
-        {renderHeaderTitle()}
+  const renderExhibition = () => {
+    return (
+      <>
+        {renderHeaderItem()}
+        {/* {renderHeaderImage()} */}
+        {/* {renderHeaderTitle()} */}
         {renderHeaderDesc()}
         {renderFeaturedArtists()}
         {renderFooterDesc()}
         {renderMediaGallery()}
+      </>
+    )
+  }
+
+  const renderExhibitionList = () => {
+    return (
+      <div className='exhibition-list'>
+        { PLACEHOLDER_EXHIBITIONS.map((ex, index) => {
+          return (
+            <ExhibitionItem 
+              key={ ex.id } 
+              exhibition={ ex } 
+              isLink={ true } 
+            />
+          );
+        })}
+      </div>
+    );
+  }
+
+  return (
+    <div className='exhibition-page-wrapper'>
+      <div className='page-container'>
+        { id ? renderExhibition() : renderExhibitionList() }
       </div>
     </div>
   );
