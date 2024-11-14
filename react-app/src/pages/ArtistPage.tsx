@@ -2,7 +2,8 @@ import React from 'react';
 import './ArtistPage.scss';
 import { useParams } from 'react-router-dom';
 import ArtistList from '../components/ArtistList';
-import { PLACEHOLDER_ARTISTS, PLACEHOLDER_IMAGE_LG } from '../constants';
+import { PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, PLACEHOLDER_IMAGE_LG } from '../constants';
+import ExhibitionList from '../components/ExhibitionList';
 
 interface ArtistPageProps {
   // Define your component's props here
@@ -81,6 +82,7 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
     return (
       <div className='artist-exhibitions'>
         { renderTextTitle('Exhibitions') }
+        <ExhibitionList exhibitions={PLACEHOLDER_EXHIBITIONS} />
       </div>
     );
   }

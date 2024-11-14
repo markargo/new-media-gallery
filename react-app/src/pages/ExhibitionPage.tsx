@@ -4,6 +4,7 @@ import { Artist, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS } from '../constan
 import ExhibitionItem from '../components/ExhibitionItem';
 import { useParams } from 'react-router-dom';
 import ArtistList from '../components/ArtistList';
+import ExhibitionList from '../components/ExhibitionList';
 
 interface ExhibitionPageProps {
   // Define your component's props here
@@ -111,17 +112,7 @@ const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
 
   const renderExhibitionList = () => {
     return (
-      <div className='exhibition-list'>
-        { PLACEHOLDER_EXHIBITIONS.map((ex, index) => {
-          return (
-            <ExhibitionItem 
-              key={ ex.id } 
-              exhibition={ ex } 
-              isLink={ true } 
-            />
-          );
-        })}
-      </div>
+      <ExhibitionList exhibitions={ PLACEHOLDER_EXHIBITIONS } />
     );
   }
 
