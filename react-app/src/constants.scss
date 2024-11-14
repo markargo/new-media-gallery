@@ -51,9 +51,10 @@
 
 .header-title {
   font-size: 2.5rem;
+  font-weight: bold;
   margin: 0;
   padding: 10px 20px;
-  text-decoration: underline;
+  // text-decoration: underline;
   align-self: flex-start;
 }
 
@@ -147,4 +148,24 @@ a {
     color: rgb(238, 247, 144);
     text-decoration: underline;
   }
+}
+
+.text-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 10px 20px;
+  text-decoration: underline;
+  align-self: flex-start;
+}
+
+.text-block {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 10px 20px;
+  align-self: flex-start;
+}
+
+.text-section {
+
 }

@@ -1,9 +1,8 @@
 import React from 'react';
 import './ArtistPage.scss';
 import { useParams } from 'react-router-dom';
-import { render } from '@testing-library/react';
 import ArtistList from '../components/ArtistList';
-import { PLACEHOLDER_ARTISTS } from '../constants';
+import { PLACEHOLDER_ARTISTS, PLACEHOLDER_IMAGE_LG } from '../constants';
 
 interface ArtistPageProps {
   // Define your component's props here
@@ -18,14 +17,99 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
     );
   }
 
+  const renderTextTitle = (text: string) => {
+    return (
+      <div className='text-header'>
+        { text }
+      </div>
+    );
+  }
+  
+  const renderTextBlock = (text: string) => {
+    return (
+      <div className='text-block'>
+        { text }
+      </div>
+    );
+  }
+  
+  const renderTextSection = (title: string, text: string) => {
+    return (
+      <div className='text-section'>
+        { renderTextTitle(title) }
+        { renderTextBlock(text) }
+      </div>
+    );
+  }
+
+  const renderHeaderImage = () => {
+    return (
+      <div className='header-image'>
+        <img src={PLACEHOLDER_IMAGE_LG} alt='Artist' />
+      </div>
+    );
+  }
+
+  const renderHeaderTitle = () => {
+    const artist = PLACEHOLDER_ARTISTS.find(artist => artist.id === id);
+    return (
+      <div className='header-title'>
+        { artist ? artist.name : 'Artist' }
+      </div>
+    );
+  }
+
+  const renderLinks = () => {
+    return (
+      <div className='artist-links'>
+        <a href='#'>Website</a>
+        <a href='#'>Instagram</a>
+        <a href='#'>Twitter</a>
+      </div>
+    );
+  }
+
+  const renderBio = () => {
+    return (
+      <div className='artist-bio'>
+        { renderTextSection('Bio', 'This is a bio.') }
+      </div>
+    );
+  }
+
+  const renderExhibitions = () => {
+    return (
+      <div className='artist-exhibitions'>
+        { renderTextTitle('Exhibitions') }
+      </div>
+    );
+  }
+
+  const renderProjects = () => {
+    return (
+      <div className='artist-projects'>
+        { renderTextTitle('Projects') }
+      </div>
+    );
+  }
+
   const renderArtist = () => {
-    /* renderHeaderImage() */
-    /* renderHeaderTitle() */
-    /* renderHeaderDesc() */
-    /* renderFeaturedExhibitions() */
-    /* renderFeaturedProjects() */
-    /* renderFooterDesc() */
-    return <></>;
+    return (
+      <div>
+        { renderHeaderImage() }
+        { renderHeaderTitle() }
+        { renderLinks() }
+        { renderBio() }
+        { renderProjects() }
+        { renderExhibitions() }
+        {/* /* renderHeaderTitle() */
+        /* renderHeaderImage() */
+        /* renderHeaderDesc() */
+        /* renderFeaturedExhibitions() */
+        /* renderFeaturedProjects() */
+        /* renderFooterDesc() */ }
+      </div>
+    );
   }
 
   console.log(id);
@@ -34,7 +118,7 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
     <div className='artist-page-wrapper'>
       <div className='page-container'>
       {
-        id === undefined ? renderArtistList() : renderArtist()
+        id ? renderArtist() : renderArtistList()
       }
       </div>
     </div>
