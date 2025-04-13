@@ -2,7 +2,7 @@ import React from 'react';
 import './ProjectPage.scss';
 import { Link, useParams } from 'react-router-dom';
 import ExhibitionList from '../components/ExhibitionList';
-import { Artist, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, PLACEHOLDER_IMAGE_LG, PLACEHOLDER_PROJECTS, Project } from '../constants';
+import { Artist, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, PLACEHOLDER_IMAGE_LG, PLACEHOLDER_PROJECTS, Project, SITE_DATA, UNKNOWN_ARTIST } from '../constants';
 import ProjectList from '../components/ProjectList';
 import parse from 'html-react-parser';
 
@@ -16,7 +16,7 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
 
   const renderProjectList = () => {
     return (
-      <ProjectList projects={PLACEHOLDER_PROJECTS} />
+      <ProjectList projects={SITE_DATA.projects} />
     );
   }
 
@@ -45,10 +45,18 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
     );
   }
 
-  const renderHeaderImage = () => {
+  const renderHeaderImage = (project: Project | undefined) => {
+    if (!project) {
+      return (
+        <div className='header-image'>
+          <img src={PLACEHOLDER_IMAGE_LG} alt='Artist' />
+        </div>
+      );
+    }
     return (
       <div className='header-image'>
-        <img src={PLACEHOLDER_IMAGE_LG} alt='Artist' />
+        {/* <img src={PLACEHOLDER_IMAGE_LG} alt='Artist' /> */}
+        <img src={ project.img } onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_IMAGE_LG; }} alt={project.name}></img>
       </div>
     );
   }
@@ -62,7 +70,7 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
         by&nbsp; 
         { 
           project?.artists.map((aid, index) => {
-            const artist = PLACEHOLDER_ARTISTS.find(a => a.id === aid);
+            const artist = SITE_DATA.artists.find(a => a.id === aid) || UNKNOWN_ARTIST;
             const bits: JSX.Element[] = [
               <Link key={ index } to={'/artist/'+artist?.id}>
                 { artist?.name }
@@ -81,7 +89,11 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
     ];
   }
 
-  const renderLinks = () => {
+  const renderLinks = (project: Project | undefined) => {
+    if (!project || !project.links || project.links.length === 0) {
+      return null;
+    }
+
     return [
       renderTextTitle('Links'),
       <div className='artist-links'>
@@ -100,24 +112,27 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
     );
   }
 
-  const renderExhibitions = () => {
+  const renderExhibitions = (project: Project | undefined) => {
+    if (!project || !project.exhibitions || project.exhibitions.length === 0) {
+      return null;
+    }
     return (
       <div className='artist-exhibitions'>
         { renderTextTitle('Exhibitions') }
-        <ExhibitionList exhibitions={PLACEHOLDER_EXHIBITIONS} />
+        <ExhibitionList exhibitions={SITE_DATA.exhibitions.filter(ex => project?.exhibitions.includes(ex.id))} />
       </div>
     );
   }
 
   const renderProject = () => {
-    const project = PLACEHOLDER_PROJECTS.find(proj => proj.id === id);
+    const project = SITE_DATA.projects.find(proj => proj.id === id);
     return (
       <div>
-        { renderHeaderImage() }
+        { renderHeaderImage(project) }
         { renderHeaderTitle(project) }
         { renderStatement(project) }
-        { renderLinks() }
-        { renderExhibitions() }
+        { renderLinks(project) }
+        { renderExhibitions(project) }
         {/* /* renderHeaderTitle() */
         /* renderHeaderImage() */
         /* renderHeaderDesc() */
