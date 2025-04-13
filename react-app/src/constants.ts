@@ -1,7 +1,12 @@
+// import data files
+import { ARTISTS } from "./data/artists";
+import { EXHIBITIONS } from "./data/exhibitions";
+import { PROJECTS } from "./data/projects";
 
 export interface Artist {
   id: string;
   name: string;
+  projects?: string[];
 }
 
 export interface Exhibition {
@@ -12,7 +17,7 @@ export interface Exhibition {
   footer: string;
   startDate: string;
   endDate: string;
-  artists: Artist[];
+  projects: string[];
   mediaGallery: string[];
   isFeatured?: boolean;
 }
@@ -22,17 +27,21 @@ export interface Project {
   name: string;
   img: string;
   desc: string;
-  startDate: string;
-  endDate: string;
   artists: string[];
   exhibitions: string[];
   mediaGallery: string[];
+  links?: string[];
 }
 
 
 export const PLACEHOLDER_IMAGE_LG = '/600x600.png'
 export const PLACEHOLDER_IMAGE_MD = '/300x300.png'
 export const PLACEHOLDER_IMAGE_SM = '/150x150.png'
+
+export const UNKNOWN_ARTIST: Artist = {
+  id: 'Unknown',
+  name: 'Unknown Artist',
+}
 
 export const PLACEHOLDER_ARTISTS: Artist[] = [
   {
@@ -82,9 +91,7 @@ export const PLACEHOLDER_PROJECTS: Project[] = [
     id: 'Project1',
     name: 'Project 1',
     img: PLACEHOLDER_IMAGE_LG,
-    desc: '<p><b>Project 1</b> is a collaborative effort that brings together a diverse group of artists, each contributing their unique perspectives and skills to create a multifaceted experience. The project explores themes of identity, community, and transformation, using a variety of media including painting, sculpture, digital art, and performance.</p><p>Through this project, the artists aim to challenge conventional notions of art and push the boundaries of their respective disciplines. The exhibition invites viewers to engage with the artworks on a deeper level, encouraging them to reflect on their own experiences and perceptions.</p><p>By fostering a dialogue between the artists and the audience, <b>Project 1</b> seeks to create a space for meaningful exchange and connection. The project is not only a showcase of individual talent but also a testament to the power of collaboration and the potential for art to inspire change. Each piece in the exhibition is a testament to the artists dedication and passion, offering a glimpse into their creative processes and the stories behind their work. <b>Project 1</b> is a celebration of artistic expression and a reminder of the importance of creativity in our lives.</p>',
-    startDate: '2024-04-17',
-    endDate: '2024-04-23',
+    desc: '<p><em>Tabletop Minigolf</em> is an invitation to connect, play, and rediscover the simple pleasure of a shared game.</p><p>Two players face off, each using a putter and a ball to navigate a dynamic course filled with moving obstacles. These shifting elements are all powered by technology and code connected to an Arduino UNO device. The goal is simple: complete the course with fewer hits than your partner.</p><p>Inspired by gaming experiences that offer breaks from the everyday, I set out to create an experience that momentarily draws people out of their routines, sparking spontaneous engagement and connection with fellow participants.</p><p>What sets <em>Tabletop Minigolf</em> apart is the emphasis on movement and unpredictability. A portion of the course is decorated with traps and decisions the player must make to proceed. Unlike most traditional tabletop games, this experience incorporates dynamic shifting technological elements that require players to think critically and adjust real-time strategies.</p> <p>But It’s more than just the game itself; it’s about the shared experience between two players. In an era where digital interactions often replace face-to-face engagement, this project is a reminder of the joy found in real-world play. Whether competing against a friend or a stranger, <em>Tabletop Minigolf</em> invites players to let down their guard, share a moment of friendly competition, and step away from the demands of daily life if only for a moment.</p>',
     artists: [
       PLACEHOLDER_ARTISTS[0].id,
       PLACEHOLDER_ARTISTS[1].id,
@@ -104,8 +111,6 @@ export const PLACEHOLDER_PROJECTS: Project[] = [
     name: 'Super Long Project Name Two',
     img: PLACEHOLDER_IMAGE_LG,
     desc: 'Description for Project 2',
-    startDate: '2024-04-24',
-    endDate: '2024-04-30',
     artists: [
       PLACEHOLDER_ARTISTS[8].id,
     ],
@@ -120,8 +125,6 @@ export const PLACEHOLDER_PROJECTS: Project[] = [
     name: 'Project 3',
     img: PLACEHOLDER_IMAGE_LG,
     desc: 'Description for Project 3',
-    startDate: '2024-05-01',
-    endDate: '2024-05-07',
     artists: [
       PLACEHOLDER_ARTISTS[6].id,
       PLACEHOLDER_ARTISTS[7].id,
@@ -144,14 +147,10 @@ export const PLACEHOLDER_EXHIBITIONS: Exhibition[] = [
     footer: 'The Fragments exhibition ran from April 17th 2024 to April 23rd 2024.',
     startDate: '2024-04-17',
     endDate: '2024-04-23',
-    artists: [
-      PLACEHOLDER_ARTISTS[0],
-      PLACEHOLDER_ARTISTS[1],
-      PLACEHOLDER_ARTISTS[2],
-      PLACEHOLDER_ARTISTS[3],
-      PLACEHOLDER_ARTISTS[4],
-      PLACEHOLDER_ARTISTS[5],
-
+    projects: [
+      PLACEHOLDER_PROJECTS[0].id,
+      PLACEHOLDER_PROJECTS[1].id,
+      PLACEHOLDER_PROJECTS[2].id
     ],
     mediaGallery: [
       PLACEHOLDER_IMAGE_SM,
@@ -171,14 +170,10 @@ export const PLACEHOLDER_EXHIBITIONS: Exhibition[] = [
     footer: 'The Exhibition 2 ran from April 24th 2024 to April 30th 2024.',
     startDate: '2024-04-24',
     endDate: '2024-04-30',
-    artists: [
-      PLACEHOLDER_ARTISTS[0],
-      PLACEHOLDER_ARTISTS[1],
-      PLACEHOLDER_ARTISTS[2],
-      PLACEHOLDER_ARTISTS[3],
-      PLACEHOLDER_ARTISTS[4],
-      PLACEHOLDER_ARTISTS[5],
-
+    projects: [
+      PLACEHOLDER_PROJECTS[0].id,
+      PLACEHOLDER_PROJECTS[1].id,
+      PLACEHOLDER_PROJECTS[2].id
     ],
     mediaGallery: [
       PLACEHOLDER_IMAGE_SM,
@@ -199,14 +194,10 @@ export const PLACEHOLDER_EXHIBITIONS: Exhibition[] = [
     footer: 'The Exhibition 3 ran from May 1st 2024 to May 7th 2024.',
     startDate: '2024-05-01',
     endDate: '2024-05-07',
-    artists: [
-      PLACEHOLDER_ARTISTS[0],
-      PLACEHOLDER_ARTISTS[1],
-      PLACEHOLDER_ARTISTS[2],
-      PLACEHOLDER_ARTISTS[3],
-      PLACEHOLDER_ARTISTS[4],
-      PLACEHOLDER_ARTISTS[5],
-
+    projects: [
+      PLACEHOLDER_PROJECTS[0].id,
+      PLACEHOLDER_PROJECTS[1].id,
+      PLACEHOLDER_PROJECTS[2].id
     ],
     mediaGallery: [
       PLACEHOLDER_IMAGE_SM,
@@ -224,6 +215,12 @@ export const PLACEHOLDER_DATA = {
   exhibitions: PLACEHOLDER_EXHIBITIONS,
   artists: PLACEHOLDER_ARTISTS,
   projects: PLACEHOLDER_PROJECTS,
+}
+
+export const SITE_DATA = {
+  exhibitions: EXHIBITIONS,
+  artists: ARTISTS,
+  projects: PROJECTS,
 }
 
 export {}
