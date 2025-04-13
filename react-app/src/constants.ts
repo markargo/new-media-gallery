@@ -6,6 +6,8 @@ import { PROJECTS } from "./data/projects";
 export interface Artist {
   id: string;
   name: string;
+  bio?: string;
+  links?: string[];
   projects?: string[];
 }
 
@@ -28,6 +30,7 @@ export interface Project {
   img: string;
   desc: string;
   artists: string[];
+  medium?: string;
   exhibitions: string[];
   mediaGallery: string[];
   links?: string[];
