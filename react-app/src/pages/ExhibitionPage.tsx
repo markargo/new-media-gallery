@@ -1,12 +1,15 @@
 import React from 'react';
 import './ExhibitionPage.scss';
-import { Artist, Exhibition, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, SITE_DATA } from '../common';
+import { Artist, Exhibition, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, Project, SITE_DATA } from '../common';
 import ExhibitionItem from '../components/ExhibitionItem';
 import { useParams } from 'react-router-dom';
 import ArtistList from '../components/ArtistList';
 import ExhibitionList from '../components/ExhibitionList';
 import Data from '../data/data';
 import parse from 'html-react-parser';
+import UI from '../common-ui';
+import ProjectList from '../components/ProjectList';
+import { render } from '@testing-library/react';
 
 interface ExhibitionPageProps {
   // Define your component's props here
@@ -80,6 +83,27 @@ const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
     );
   }
 
+  const renderProjects = (exhibition: Exhibition) => {
+    if (!exhibition.projects || exhibition.projects.length === 0) {
+      return null;
+    }
+    // locate projects in SITE_DATA.projects
+    const projects: Project[] = [];
+    exhibition.projects.forEach(projectId => {
+      const project = SITE_DATA.projects.find(project => project.id === projectId);
+      if (project) {
+        projects.push(project);
+      }
+    });
+
+      return (
+      <div className='artist-projects'>
+        { UI.renderTextTitle('Projects') }
+        <ProjectList projects={projects} />
+      </div>
+    );
+  }
+
   const renderExhibition = () => {
     const exhibition = SITE_DATA.exhibitions.find(exhibition => exhibition.id === id);
     if (!exhibition) {
@@ -94,6 +118,7 @@ const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
         {renderFeaturedArtists(exhibition)}
         {renderFooterDesc(exhibition)}
         {renderMediaGallery(exhibition)}
+        {renderProjects(exhibition)}
       </>
     )
   }

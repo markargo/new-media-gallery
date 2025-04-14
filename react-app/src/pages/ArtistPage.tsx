@@ -5,6 +5,7 @@ import ArtistList from '../components/ArtistList';
 import { Artist, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, PLACEHOLDER_IMAGE_LG, Project, SITE_DATA } from '../common';
 import ExhibitionList from '../components/ExhibitionList';
 import ProjectList from '../components/ProjectList';
+import UI from '../common-ui';
 
 interface ArtistPageProps {
   // Define your component's props here
@@ -19,27 +20,13 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
     );
   }
 
-  const renderTextTitle = (text: string) => {
-    return (
-      <div className='text-header'>
-        { text }
-      </div>
-    );
-  }
-  
-  const renderTextBlock = (text: string) => {
-    return (
-      <div className='text-block'>
-        { text }
-      </div>
-    );
-  }
+
   
   const renderTextSection = (title: string, text: string) => {
     return (
       <div className='text-section'>
-        { renderTextTitle(title) }
-        { renderTextBlock(text) }
+        { UI.renderTextTitle(title) }
+        { UI.renderTextBlock(text) }
       </div>
     );
   }
@@ -66,7 +53,7 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
       return null;
     }
     return [
-      renderTextTitle('Links'),
+      UI.renderTextTitle('Links'),
       <div className='artist-links'>
         <a href='#'>Website</a>
         <a href='#'>Instagram</a>
@@ -89,7 +76,7 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
   const renderExhibitions = (artist: Artist) => {
     return (
       <div className='artist-exhibitions'>
-        { renderTextTitle('Exhibitions') }
+        { UI.renderTextTitle('Exhibitions') }
         <ExhibitionList exhibitions={PLACEHOLDER_EXHIBITIONS} />
       </div>
     );
@@ -110,7 +97,7 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
 
       return (
       <div className='artist-projects'>
-        { renderTextTitle('Projects') }
+        { UI.renderTextTitle('Projects') }
         <ProjectList projects={projects} />
       </div>
     );
