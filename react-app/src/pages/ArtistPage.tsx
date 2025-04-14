@@ -123,7 +123,7 @@ const ArtistPage: React.FC<ArtistPageProps> = () => {
     }
     return (
       <div>
-        { renderHeaderImage(artist) }
+        {/* { renderHeaderImage(artist) } */}
         { renderHeaderTitle(artist) }
         { renderBio(artist) }
         { renderLinks(artist) }

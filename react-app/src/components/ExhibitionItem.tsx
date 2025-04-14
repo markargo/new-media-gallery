@@ -14,7 +14,7 @@ const ExhibitionItem: React.FC<ExhibitionItemProps> = ({ exhibition, isLink=fals
     return (
       <div className='exhibition-item-contents'>
         {/* <img src={ exhibition.img } alt='Exhibition' /> */}
-        <img src={ exhibition.img } onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_IMAGE_LG; }} alt={exhibition.name}></img>        
+        <img src={ '/' + exhibition.img } onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_IMAGE_LG; }} alt={exhibition.name}></img>        
         <div className='exhibition-item-title'>
           { exhibition.name }
         </div>

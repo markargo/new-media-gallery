@@ -14,7 +14,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, isLink=false, }) => 
     return (
       <div className='project-item-contents'>
         {/* <img src={ project.img } alt='Project' /> */}
-        <img src={ project.img } onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_IMAGE_LG; }} alt={project.name}></img>
+        <img src={ '/' + project.img } onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_IMAGE_LG; }} alt={project.name}></img>
         <div className='project-item-title'>
           { project.name }
         </div>

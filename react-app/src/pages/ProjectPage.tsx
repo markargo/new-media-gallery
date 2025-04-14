@@ -45,23 +45,17 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
     );
   }
 
-  const renderHeaderImage = (project: Project | undefined) => {
-    if (!project) {
-      return (
-        <div className='header-image'>
-          <img src={PLACEHOLDER_IMAGE_LG} alt='Artist' />
-        </div>
-      );
-    }
+  const renderHeaderImage = (project: Project) => {
+    console.log(project.img);
     return (
       <div className='header-image'>
         {/* <img src={PLACEHOLDER_IMAGE_LG} alt='Artist' /> */}
-        <img src={ project.img } onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_IMAGE_LG; }} alt={project.name}></img>
+        <img src={ '/' + project.img } onError={(e) => { console.error('issue with header image'); e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_IMAGE_LG; }} alt={project.name}></img>
       </div>
     );
   }
 
-  const renderHeaderTitle = (project: Project | undefined) => {
+  const renderHeaderTitle = (project: Project) => {
     return [
       <div className='header-title'>
         { project ? project.name : 'Project' }
@@ -89,7 +83,7 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
     ];
   }
 
-  const renderLinks = (project: Project | undefined) => {
+  const renderLinks = (project: Project) => {
     if (!project || !project.links || project.links.length === 0) {
       return null;
     }
@@ -104,7 +98,7 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
     ];
   }
 
-  const renderStatement = (project: Project | undefined) => {
+  const renderStatement = (project: Project) => {
     return (
       <div className='project-statement'>
         { renderTextBlock(project?.desc || '') }
@@ -112,7 +106,7 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
     );
   }
 
-  const renderExhibitions = (project: Project | undefined) => {
+  const renderExhibitions = (project: Project) => {
     if (!project || !project.exhibitions || project.exhibitions.length === 0) {
       return null;
     }
@@ -126,6 +120,9 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
 
   const renderProject = () => {
     const project = SITE_DATA.projects.find(proj => proj.id === id);
+    if (!project) {
+      return <div>Project not found</div>;
+    }
     return (
       <div>
         { renderHeaderImage(project) }
