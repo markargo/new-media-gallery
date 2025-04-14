@@ -32,22 +32,6 @@ const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
     )
   }
 
-  // const renderHeaderImage = (exhibition: Exhibition) => {
-  //   return (
-  //     <div className='header-image'>
-  //       <img src={ headerImage } alt='Exhibition header' />
-  //     </div>
-  //   );
-  // }
-
-  // const renderHeaderTitle = (exhibition: Exhibition) => {
-  //   return (
-  //     <div className='header-title'>
-  //       { headerTitle }
-  //     </div>
-  //   );
-  // }
-
   const renderHeaderDesc = (exhibition: Exhibition) => {
     return (
       <div className='header-desc'>
@@ -75,6 +59,9 @@ const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
   }
 
   const renderMediaGallery = (exhibition: Exhibition) => {
+    if (!exhibition.mediaGallery || exhibition.mediaGallery.length === 0) {
+      return null;
+    }
     return (
       <div className='media-gallery-wrapper'>
         <div>
@@ -82,7 +69,7 @@ const ExhibitionPage: React.FC<ExhibitionPageProps> = () => {
         </div>
         <div className='media-gallery'>
           {
-            mediaGallery.map((media, index) => {
+            exhibition.mediaGallery.map((media, index) => {
               return (
                 <img key={ index } src={ media } alt='Media gallery item' />
               );
