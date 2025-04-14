@@ -1,7 +1,7 @@
 import { PROJECTS } from './projects'; // Assuming projects is an array of project objects
 import { ARTISTS } from './artists'; // Assuming artists is an array of artist objects
 import { EXHIBITIONS } from './exhibitions'; // Assuming exhibitions is an array of exhibition objects
-import { Artist, Project } from '../constants';
+import { Artist, Project } from '../common';
 
 class Data {
   private static instance: Data;

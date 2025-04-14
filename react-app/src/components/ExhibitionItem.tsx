@@ -1,6 +1,6 @@
 import React from 'react';
 import './ExhibitionItem.scss';
-import { Exhibition, PLACEHOLDER_IMAGE_LG } from '../constants';
+import { Exhibition, PLACEHOLDER_IMAGE_LG } from '../common';
 import { Link } from 'react-router-dom';
 
 interface ExhibitionItemProps {

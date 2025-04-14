@@ -1,6 +1,6 @@
 import React from 'react';
 import './ExhibitionList.scss';
-import { Project } from '../constants';
+import { Project } from '../common';
 import ProjectItem from './ProjectItem';
 
 interface ProjectListProps {

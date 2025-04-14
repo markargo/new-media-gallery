@@ -1,6 +1,6 @@
 import React from 'react';
 import './ExhibitionList.scss';
-import { Exhibition } from '../constants';
+import { Exhibition } from '../common';
 import ExhibitionItem from './ExhibitionItem';
 
 interface ExhibitionListProps {

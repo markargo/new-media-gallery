@@ -1,6 +1,6 @@
 import React from 'react';
 import './ExhibitionPage.scss';
-import { Artist, Exhibition, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, SITE_DATA } from '../constants';
+import { Artist, Exhibition, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, SITE_DATA } from '../common';
 import ExhibitionItem from '../components/ExhibitionItem';
 import { useParams } from 'react-router-dom';
 import ArtistList from '../components/ArtistList';

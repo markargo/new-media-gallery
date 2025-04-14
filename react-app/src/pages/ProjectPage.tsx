@@ -2,7 +2,7 @@ import React from 'react';
 import './ProjectPage.scss';
 import { Link, useParams } from 'react-router-dom';
 import ExhibitionList from '../components/ExhibitionList';
-import { Artist, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, PLACEHOLDER_IMAGE_LG, PLACEHOLDER_PROJECTS, Project, SITE_DATA, UNKNOWN_ARTIST } from '../constants';
+import { Artist, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, PLACEHOLDER_IMAGE_LG, PLACEHOLDER_PROJECTS, Project, SITE_DATA, UNKNOWN_ARTIST } from '../common';
 import ProjectList from '../components/ProjectList';
 import parse from 'html-react-parser';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './ArtistList.scss';
-import { Artist } from '../constants';
+import { Artist } from '../common';
 import { Link } from 'react-router-dom';
 
 interface ArtistListProps {

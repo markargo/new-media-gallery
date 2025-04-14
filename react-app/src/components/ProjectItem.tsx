@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProjectItem.scss';
-import { PLACEHOLDER_IMAGE_LG, Project } from '../constants';
+import { PLACEHOLDER_IMAGE_LG, Project } from '../common';
 import { Link } from 'react-router-dom';
 
 interface ProjectItemProps {
