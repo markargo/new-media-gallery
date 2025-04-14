@@ -23,7 +23,7 @@ function App() {
           <Route path="/project/" element={<ProjectPage />} />
           <Route path="/project/:id" element={<ProjectPage />} />
         </Routes>
-        <AppFooter />
+        {/* <AppFooter /> */}
       </div>
     </Router>
   );
