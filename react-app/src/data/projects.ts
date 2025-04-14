@@ -65,7 +65,7 @@ export const PROJECTS = [
   {
     id: "META25-mind-in-motion",
     name: "Mind in Motion",
-    img: "media/META25-mind-in-motion/header.jpg",
+    img: "media/META25-mind-in-motion/header.png",
     desc: "<p>Over the years I have developed an admiration for education, this interactive artwork represents the processes of emerging art and education. The artwork invites users to engage with a magnetic wall, where they can strategically place colorful magnets to create various images. By combining tactile interaction with visual stimulation, this artwork provides a dynamic, hands-on experience that encourages both creativity and learning.</p> <p>Through touch and color, the artwork becomes a playful tool for children to explore numbers, colors, and the world of animals. The outlined templates projected onto the wall serve as a guide to help users bring these images to life. This process promotes motor skills, spatial awareness, and cognitive development while fostering a sense of accomplishment and creativity.</p> <p>The work aims to stimulate the mind and provide an immersive experience that is both entertaining and instructive by offering a hands-on approach to learning. Ultimately this artwork is a celebration of playful discovery where every interaction fosters creativity, knowledge and a deeper connection to the world around us.</p>",
     artists: [
       "selena-williams-gutierrez"
