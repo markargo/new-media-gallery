@@ -1,7 +1,14 @@
 @import "../common.scss";
 
 .project-list-wrapper {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; // Space between items
+  justify-content: space-between; // Adjust spacing between rows
+
   > * {
-    margin-bottom: 20px;
+    flex: 1 1 calc(33.333% - 20px); // 3 items per row with gap adjustment
+    box-sizing: border-box; // Ensure padding and border are included in width
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './ExhibitionList.scss';
+import './ProjectList.scss';
 import { Project } from '../common';
 import ProjectItem from './ProjectItem';
 

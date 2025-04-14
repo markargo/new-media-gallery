@@ -5,6 +5,7 @@ import ExhibitionList from '../components/ExhibitionList';
 import { Artist, PLACEHOLDER_ARTISTS, PLACEHOLDER_EXHIBITIONS, PLACEHOLDER_IMAGE_LG, PLACEHOLDER_PROJECTS, Project, SITE_DATA, UNKNOWN_ARTIST } from '../common';
 import ProjectList from '../components/ProjectList';
 import parse from 'html-react-parser';
+import Data from '../data/data';
 
 interface ProjectPageProps {
 
@@ -13,12 +14,6 @@ interface ProjectPageProps {
 const ProjectPage: React.FC<ProjectPageProps> = () => {
   const { id } = useParams();
 
-
-  const renderProjectList = () => {
-    return (
-      <ProjectList projects={SITE_DATA.projects} />
-    );
-  }
 
   const renderTextTitle = (text: string) => {
     return (
@@ -140,7 +135,12 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
     );
   }
 
-  console.log(id);
+  const renderProjectList = () => {
+    return (
+      <ProjectList projects={Data.allProjects()} />
+    );
+  }
+
 
   return (
     <div className='project-page-wrapper'>
