@@ -18,7 +18,7 @@ const AppHeader: React.FC<AppHeaderProps> = () => {
         </Link>
       </div>
       <div className='app-header-nav'>
-        <Link to='/exhibition'>Exhibitions</Link>&nbsp;|&nbsp;
+        {/* <Link to='/exhibition'>Exhibitions</Link>&nbsp;|&nbsp; */}
         <Link to='/artist'>Artists</Link>&nbsp;|&nbsp;
         <Link to='/project'>Projects</Link>
       </div>
