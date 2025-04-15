@@ -23,7 +23,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy:stagingscp": "scp -r ./build/* newmediatmu@iad1-shared-e1-16.dreamhost.com:staging.newmediatmu.com/",
+    "deploy:staging": "rsync -avz --update -e 'ssh' ./build/* newmediatmu@iad1-shared-e1-16.dreamhost.com:staging.newmediatmu.com/",
+    "deploy:livescp": "scp -r ./build/* newmediatmu@iad1-shared-e1-16.dreamhost.com:newmediatmu.com/",
+    "deploy:live": "rsync -avz --update -e 'ssh' ./build/* newmediatmu@iad1-shared-e1-16.dreamhost.com:newmediatmu.com/"
   },
   "eslintConfig": {
     "extends": [
