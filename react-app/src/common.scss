@@ -1,3 +1,24 @@
+
+// dark theme
+// $bgColor: rgb(37, 37, 37);
+// $logoInvert: 1;
+
+// metamorphosis theme
+$bgColor: rgb(250, 250, 250);
+$logoInvert: 0;
+$titleBgColor: rgb(31, 31, 31, 0.95);
+
+// $textColor: rgb(239, 240, 231);
+// $linkColor: rgb(238, 247, 144);
+// $visitedColor: rgb(247, 216, 144);
+// $hoverColor: rgb(238, 247, 144);
+$textColor: rgb(37, 37, 37);
+$linkColor: rgb(31, 158, 42);
+$visitedColor: rgb(13, 116, 13);
+$hoverColor: rgb(30, 175, 47);
+$titleBgColor: rgb(250, 250, 250, 0.9);
+
+
 @mixin centered-flexbox($max-width: 600px) {
   display: flex;
   justify-content: flex-start;
@@ -132,20 +153,23 @@
 
 }
 
+
 body {
-  color: rgb(239, 240, 231);
+  color: $textColor;
 }
 
+
 a {
-  color: rgb(238, 247, 144);
+
+  color: $linkColor;
   text-decoration: none;
 
   &:visited {
-    color: rgb(247, 216, 144);
+    color: $visitedColor;
   }
 
   &:hover {
-    color: rgb(238, 247, 144);
+    color: $hoverColor;
     text-decoration: underline;
   }
 }
