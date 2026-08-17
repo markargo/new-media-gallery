@@ -1,10 +1,32 @@
-# Getting Started with Create React App
+# New Media Gallery
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web app is designed to provide an archive for exhibited works within the New Media program. It is written using a mix of Typescript and Javascript, and utilizes the React framework via: [Create React App](https://github.com/facebook/create-react-app)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Setup
+
+You'll need to download and install [NodeJS](https://nodejs.org).
+
+Clone this repository by downloading from Github or using the [Github Desktop app](https://desktop.github.com/download/)
+
+Once you've installed NodeJS and cloned the repo you need to install the project dependencies:
+
+```
+npm install
+```
+
+This downloads all required packages (indicated in the `package.json` file) using `npm` (Node Package Manager). 
+
+Assuming everything goes well you can now run the app in a variety of ways... 
+
+### Other helpful tools
+
+I recommend having a code editor IDE (integrated development environment) such as [Visual Studio Code](https://code.visualstudio.com) or the opensource version [VSCodium](https://vscodium.com).
+
+I also recommend having an FTP software for uploading to/from a server such as [Cyberduck](http://cyberduck.io) or [Filezilla](https://filezilla-project.org).
+
+
+## Running
 
 ### `npm start`
 
@@ -28,16 +50,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
