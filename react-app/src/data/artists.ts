@@ -1,542 +1,346 @@
 export const ARTISTS = [
-{
-  id: "finn-cassidy",
-  name: "Finn Cassidy",
-  projects: [
-    "META25-tabletop-minigolf"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "yidi-chen",
-  name: "Yidi Chen",
-  projects: [
-    "META25-hana"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "vivian-fung",
-  name: "Vivian Fung",
-  projects: [
-    "META25-welter"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "selena-williams-gutierrez",
-  name: "Selena Williams Gutierrez",
-  projects: [
-    "META25-mind-in-motion"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "komal-lally",
-  name: "Komal Lally",
-  projects: [
-    "META25-from-a-glimpse"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "chloe-macdonald",
-  name: "Chloe Macdonald",
-  projects: [
-    "META25-all-hands-on-deck"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "hina-mir",
-  name: "Hina Mir",
-  projects: [
-    "META25-ethereal"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "mahima-singh",
-  name: "Mahima Singh",
-  projects: [
-    "META25-threadscape"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "yoko-yin",
-  name: "Yoko Yin",
-  projects: [
-    "META25-frozen-time"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "cathy-yue",
-  name: "Cathy Yue",
-  projects: [
-    "META25-lucky-cats"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "milo-cassidy",
-  name: "Milo Cassidy",
-  projects: [
-    "META25-coney-island-smile"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "dalia-chami",
-  name: "Dalia Chami",
-  projects: [
-    "META25-lebanons-memory"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "yuru-dai",
-  name: "Yuru Dai",
-  projects: [
-    "META25-shared-light"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "vicky-huang",
-  name: "Vicky Huang",
-  projects: [
-    "META25-what-once-was"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "declan-key",
-  name: "Declan Key",
-  projects: [
-    "META25-eclipse"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "aamna-khwaja",
-  name: "Aamna Khwaja",
-  projects: [
-    "META25-rewind-the-new-media-experience"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "dylan-lehto",
-  name: "Dylan Lehto",
-  projects: [
-    "META25-as-i-sleep"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "polina-metrosova",
-  name: "Polina Matrosova",
-  projects: [
-    "META25-growth"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "angela-ruth-sundiam",
-  name: "Angela Ruth Sundiam",
-  projects: [
-    "META25-inner-sanctum"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "george-tanios",
-  name: "George Tanios",
-  projects: [
-    "META25-inescapable"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "hailey-waldner-thoen",
-  name: "Hailey Waldner Thoen",
-  projects: [
-    "META25-downfall-of-the-cheezboys"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "dean-vukovic",
-  name: "Dean Vukovic",
-  projects: [
-    "META25-knowing-something-of-it"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "patrik-ago",
-  name: "Patrik Ago",
-  projects: [
-    "META25-the-tower"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "abeer-amjad",
-  name: "Abeer Amjad",
-  projects: [
-    "META25-the-losts-patients"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "feng-chen",
-  name: "Feng Chen",
-  projects: [
-    "META25-sword-and-shield"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "deirdre-lai",
-  name: "Deirdre Dai",
-  projects: [
-    "META25-rexs-jaig-eye"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "catherine-demyanenko",
-  name: "Catherine Demyanenko",
-  projects: [
-    "META25-the-sentinel"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "ethan-diep",
-  name: "Ethan Diep",
-  projects: [
-    "META25-project-hoshina"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "john-florio",
-  name: "John (Jack) Florio",
-  projects: [
-    "META25-house-of-jf"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "lucie-hunter",
-  name: "Lucie Hunter",
-  projects: [
-    "META25-escapism"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "kanghui-liu",
-  name: "Kanghui Liu",
-  projects: [
-    "META25-the-journey"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "liam-mackenzie",
-  name: "Liam Mackenzie",
-  projects: [
-    "META25-the-disabling"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "luke-nguyen",
-  name: "Luke Nguyen",
-  projects: [
-    "META25-jinxs-lightsaber"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "david-nzekwu",
-  name: "David Nzekwu",
-  projects: [
-    "META25-sonic-resonance"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "jianle-xu",
-  name: "Jianle Xu",
-  projects: [
-    "META25-treasure-hunt"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "tiange-yang",
-  name: "Tiange Yang",
-  projects: [
-    "META25-treasure-hunt"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "yves-alsharifi",
-  name: "Yves Al sharifi",
-  projects: [
-    "META25-fantasyland"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "may-yu",
-  name: "May Yu",
-  projects: [
-    "META25-fantasyland"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "hiba-abdurahman",
-  name: "Hiba Abdurahman",
-  projects: [
-    "META25-fragments-of-home"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "vinay-adhya",
-  name: "Vinay Adhya",
-  projects: [
-    "META25-reverbe"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "isabella-andreev",
-  name: "Isabella Andreev",
-  projects: [
-    "META25-sheets-of-music"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "finch-assadoullaev",
-  name: "Finch Assadoullaev",
-  projects: [
-    "META25-for-bidden-truth"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "tyler-dayno",
-  name: "Tyler Dayno",
-  projects: [
-    "META25-runners-high"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "annika-de-witte",
-  name: "Annika de Witte",
-  projects: [
-    "META25-this-too-shall-pass"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "kobe-munroe",
-  name: "Kobe Munroe",
-  projects: [
-    "META25-view-of-canadas-tallest-wonder"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "chau-nguyen",
-  name: "Chau Nguyen",
-  projects: [
-    "META25-leave-it-behind-in-tatters"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "stefan-paul",
-  name: "Stefan Paul",
-  projects: [
-    "META25-a-distant-memory"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "dan-santos",
-  name: "Dan J. Santos",
-  projects: [
-    "META25-finding-your-place"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "shawna-sun",
-  name: "Shawna Sun",
-  projects: [
-    "META25-dawn-of-the-arcana"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "sam-tam",
-  name: "Sam Tam",
-  projects: [
-    "META25-immortal-city"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "seerhana-tarannum",
-  name: "Seerhana Tarannum",
-  projects: [
-    "META25-nothing-matters"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "silvia-wu",
-  name: "Silvia (Kunyang) Wu",
-  projects: [
-    "META25-overloadad-hd"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "aeena-asif",
-  name: "Aeena Asif",
-  projects: [
-    "META25-the-weight-i-wear"
-  ],
-  links: [
-
-  ]
-},
-{
-  id: "miguel-pasquin",
-  name: "Miguel Pasquin",
-  projects: [
-    "META25-acro"
-  ],
-  links: [
-
-  ]
-}
+  {
+    id: "alex-doan",
+    name: "Alex Doan",
+    projects: [
+      "NM26-the-heart-remembers"
+    ],
+    links: []
+  },
+  {
+    id: "angel-chen",
+    name: "Angel Chen",
+    projects: [
+      "NM26-between-light-and-time"
+    ],
+    links: []
+  },
+  {
+    id: "angela-son",
+    name: "Angela Son",
+    projects: [
+      "NM26-who-am-i-when-youre-looking"
+    ],
+    links: []
+  },
+  {
+    id: "angelo-govas",
+    name: "Angelo Govas",
+    projects: [
+      "NM26-intelligence"
+    ],
+    links: []
+  },
+  {
+    id: "berra-sertkan",
+    name: "Berra Sertkan",
+    projects: [
+      "NM26-house-of-longing"
+    ],
+    links: []
+  },
+  {
+    id: "camden-hampe",
+    name: "Camden Hampe",
+    projects: [
+      "NM26-emac-early-micro-controlled-animatronic-concept"
+    ],
+    links: []
+  },
+  {
+    id: "carl-brown",
+    name: "Carl Brown",
+    projects: [
+      "NM26-monster-trainer"
+    ],
+    links: []
+  },
+  {
+    id: "chris-gheorghe",
+    name: "Chris Gheorghe",
+    projects: [
+      "NM26-next-gen-air-hockey"
+    ],
+    links: []
+  },
+  {
+    id: "dagmawit-worku",
+    name: "Dagmawit Worku",
+    projects: [
+      "NM26-tane-adam-companion"
+    ],
+    links: []
+  },
+  {
+    id: "darragh-sawyer",
+    name: "Darragh Sawyer",
+    projects: [
+      "NM26-the-pasture"
+    ],
+    links: []
+  },
+  {
+    id: "eamon-boily",
+    name: "Eamon Boily",
+    projects: [
+      "NM26-port-to-profit"
+    ],
+    links: []
+  },
+  {
+    id: "emalita-natividad",
+    name: "Emalita Natividad",
+    projects: [
+      "NM26-yai"
+    ],
+    links: []
+  },
+  {
+    id: "emma-kardar",
+    name: "Emma Kardar",
+    projects: [
+      "NM26-pick"
+    ],
+    links: []
+  },
+  {
+    id: "erika-reynolds",
+    name: "Erika Reynolds",
+    projects: [
+      "NM26-holding-on-to-colour"
+    ],
+    links: []
+  },
+  {
+    id: "ethan-wong",
+    name: "Ethan Wong",
+    projects: [
+      "NM26-singularity-souls"
+    ],
+    links: []
+  },
+  {
+    id: "evan-clarke",
+    name: "Evan Clarke",
+    projects: [
+      "NM26-knucklebox"
+    ],
+    links: []
+  },
+  {
+    id: "jadyn-ma",
+    name: "Jadyn Ma",
+    projects: [
+      "NM26-singularity-souls"
+    ],
+    links: []
+  },
+  {
+    id: "jen-lemoyne",
+    name: "Jen LeMoyne",
+    projects: [
+      "NM26-you-never-left"
+    ],
+    links: []
+  },
+  {
+    id: "jess-binns",
+    name: "Jess Binns",
+    projects: [
+      "NM26-lumidi"
+    ],
+    links: []
+  },
+  {
+    id: "jess-do",
+    name: "Jess Do",
+    projects: [
+      "NM26-green-threads"
+    ],
+    links: []
+  },
+  {
+    id: "jessica-clarke-joyce",
+    name: "Jessica Clarke-Joyce",
+    projects: [
+      "NM26-have-a-seat"
+    ],
+    links: []
+  },
+  {
+    id: "jimmy-wan",
+    name: "Jimmy Wan",
+    projects: [
+      "NM26-light-box-drawings"
+    ],
+    links: []
+  },
+  {
+    id: "joanne-ammari",
+    name: "Joanne Ammari",
+    projects: [
+      "NM26-growing-into-melancholy"
+    ],
+    links: []
+  },
+  {
+    id: "junbo-zhang",
+    name: "Junbo Zhang",
+    projects: [
+      "NM26-we1c0me-t0-my-r00m"
+    ],
+    links: []
+  },
+  {
+    id: "kelvin-doe",
+    name: "Kelvin Doe",
+    projects: [
+      "NM26-makerspace"
+    ],
+    links: []
+  },
+  {
+    id: "leah-benjamin",
+    name: "Leah Benjamin",
+    projects: [
+      "NM26-cycle-sense"
+    ],
+    links: []
+  },
+  {
+    id: "liam-white",
+    name: "Liam White",
+    projects: [
+      "NM26-field-pack-pc"
+    ],
+    links: []
+  },
+  {
+    id: "luke-kang",
+    name: "Luke Kang",
+    projects: [
+      "NM26-singularity-souls"
+    ],
+    links: []
+  },
+  {
+    id: "madeline-hanitijo",
+    name: "Madeline Hanitijo",
+    projects: [
+      "NM26-fishing-for-compliments"
+    ],
+    links: []
+  },
+  {
+    id: "michael-piamonte-talley",
+    name: "Michael Piamonte-Talley",
+    projects: [
+      "NM26-second-skin"
+    ],
+    links: []
+  },
+  {
+    id: "raven-zhang-liu",
+    name: "Raven Zhang Liu",
+    projects: [
+      "NM26-mistake"
+    ],
+    links: []
+  },
+  {
+    id: "rian-mehta",
+    name: "Rian Mehta",
+    projects: [
+      "NM26-prompted"
+    ],
+    links: []
+  },
+  {
+    id: "ron-vo",
+    name: "Ron Vo",
+    projects: [
+      "NM26-nuoc-mam-a-sensory-lineage"
+    ],
+    links: []
+  },
+  {
+    id: "rosalind-pasquino",
+    name: "Rosalind Pasquino",
+    projects: [
+      "NM26-the-cat-of-riga"
+    ],
+    links: []
+  },
+  {
+    id: "ruslan-galimov",
+    name: "Ruslan Galimov",
+    projects: [
+      "NM26-base-machina"
+    ],
+    links: []
+  },
+  {
+    id: "ryan-lee",
+    name: "Ryan Lee",
+    projects: [
+      "NM26-a-soft-reset"
+    ],
+    links: []
+  },
+  {
+    id: "sarah-ly",
+    name: "Sarah Ly",
+    projects: [
+      "NM26-da-yi-ma"
+    ],
+    links: []
+  },
+  {
+    id: "shang-li",
+    name: "Shang Li",
+    projects: [
+      "NM26-matriarchy"
+    ],
+    links: []
+  },
+  {
+    id: "sofiya-dalati",
+    name: "Sofiya Dalati",
+    projects: [
+      "NM26-daughter-identity-and-memory-a-lived-experience"
+    ],
+    links: []
+  },
+  {
+    id: "sophia-lin",
+    name: "Sophia Lin",
+    projects: [
+      "NM26-emotion-bottle"
+    ],
+    links: []
+  },
+  {
+    id: "tristan-meyer-odell",
+    name: "Tristan Meyer Odell",
+    projects: [
+      "NM26-project-holocade"
+    ],
+    links: []
+  },
+  {
+    id: "vivian-liu",
+    name: "Vivian Liu",
+    projects: [
+      "NM26-do-u-remember"
+    ],
+    links: []
+  },
+  {
+    id: "zouhal-lateef",
+    name: "Zouhal Lateef",
+    projects: [
+      "NM26-phase-based-living"
+    ],
+    links: []
+  }
 ];
