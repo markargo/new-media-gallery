@@ -14,7 +14,7 @@ const AppHeader: React.FC<AppHeaderProps> = () => {
       <div className='app-header-title'>
         {/* <Link to='/'>new media<span className='title-accent'>@tmu</span></Link> */}
         <Link to='/'>
-          <img src={'/media/METAMORPHOSIS-Main-Logo.png'} alt='Logo' />
+          <img src={'/media/header-logo.png'} alt='Logo' />
         </Link>
       </div>
       <div className='app-header-nav'>

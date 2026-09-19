@@ -22,7 +22,7 @@ function App() {
           <Route path="/artist/:id" element={<ArtistPage />} />
           <Route path="/project/" element={<ProjectPage />} />
           <Route path="/project/:id" element={<ProjectPage />} />
-          <Route path="/" element={<Navigate to={"/exhibition/metamorphosis"} replace />}/>
+          <Route path="/" element={<Navigate to={"/exhibition/NM26-madeof"} replace />}/>
         </Routes>
         {/* <AppFooter /> */}
       </div>
