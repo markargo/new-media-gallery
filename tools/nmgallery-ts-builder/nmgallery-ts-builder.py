@@ -15,14 +15,34 @@ TypeScript data files:
 Usage:
     nmgallery-ts-builder <target-folder> [-o build]
 
-Schema translation (JSON -> .ts model):
-    * title            -> name
-    * assets           -> mediaGallery
-    * img "x.jpg"      -> "media/<id>/x.jpg"
-    * year             -> dropped
-    * (project fields are re-ordered to match the reference projects.ts)
+Schema translation (JSON -> .ts model), per entity:
+
+  PROJECTS:
+    title            -> name
+    assets           -> mediaGallery
+    img "x.jpg"      -> "media/<id>/x.jpg"
+    year             -> dropped
+    order: id, name, img, desc, artists, medium, exhibitions, mediaGallery, links
+
+  ARTISTS:
+    first_name+last_name -> name ("First Last")
+    bio, img, assets     -> dropped
+    order: id, name, projects, links
+
+  EXHIBITIONS:
+    img "x.jpg"      -> "media/x.jpg"   (flat, no per-id subfolder)
+    desc2            -> footer
+    desc3            -> dropped
+    start_date       -> startDate
+    end_date         -> endDate
+    assets           -> mediaGallery
+    isFeatured       -> added, default true
+    organizers, volunteers, venues -> dropped
+    order: id, name, img, desc, footer, startDate, endDate,
+           projects, mediaGallery, isFeatured, links
 
 Output is a JS/TS object literal (UNQUOTED keys) — not strict JSON.
+Empty arrays render as [];  non-empty arrays render one item per line.
 Items are emitted in alphabetical order by folder name.
 """
 
@@ -96,42 +116,63 @@ def prompt_yes_no(question, default=True):
 
 
 # --------------------------------------------------------------------------- #
-#  Section config: (subfolder, json filename, const name, output file, order)
+#  Schema translation — one function per entity (see module docstring)
 # --------------------------------------------------------------------------- #
-PROJECT_ORDER = ["id", "name", "img", "desc", "artists",
-                 "medium", "exhibitions", "mediaGallery", "links"]
-
-SECTIONS = [
-    ("projects",    "project.json",    "PROJECTS",    "projects.ts",    PROJECT_ORDER),
-    ("artists",     "artist.json",     "ARTISTS",     "artists.ts",     None),
-    ("exhibitions", "exhibition.json", "EXHIBITIONS", "exhibitions.ts", None),
-]
-
-# JSON -> .ts model translation rules
-RENAME = {"title": "name", "assets": "mediaGallery"}
-DROP = {"year"}
+def _media(*parts):
+    """Join non-empty path parts under media/."""
+    return "media/" + "/".join(p for p in parts if p)
 
 
-# --------------------------------------------------------------------------- #
-#  Schema translation
-# --------------------------------------------------------------------------- #
-def transform_record(rec, order=None):
-    """Apply the JSON->.ts schema translation to one record."""
+def transform_project(rec):
     rid = rec.get("id", "")
-    out = {}
-    for k, v in rec.items():
-        if k in DROP:
-            continue
-        if k == "img" and isinstance(v, str) and v:
-            v = f"media/{rid}/{v}"
-        out[RENAME.get(k, k)] = v
+    img = rec.get("img", "")
+    return {
+        "id": rid,
+        "name": rec.get("title", ""),
+        "img": _media(rid, img) if img else "",
+        "desc": rec.get("desc", ""),
+        "artists": rec.get("artists", []),
+        "medium": rec.get("medium", ""),
+        "exhibitions": rec.get("exhibitions", []),
+        "mediaGallery": rec.get("assets", []),
+        "links": rec.get("links", []),
+    }
 
-    if order:
-        ordered = {k: out[k] for k in order if k in out}
-        for k, v in out.items():          # keep any extra keys not in the template
-            ordered.setdefault(k, v)
-        return ordered
-    return out
+
+def transform_artist(rec):
+    name = " ".join(p for p in (rec.get("first_name", ""),
+                                rec.get("last_name", "")) if p).strip()
+    return {
+        "id": rec.get("id", ""),
+        "name": name,
+        "projects": rec.get("projects", []),
+        "links": rec.get("links", []),
+    }
+
+
+def transform_exhibition(rec):
+    img = rec.get("img", "")
+    return {
+        "id": rec.get("id", ""),
+        "name": rec.get("name", ""),
+        "img": _media(img) if img else "",     # flat: media/<filename>, no per-id folder
+        "desc": rec.get("desc", ""),
+        "footer": rec.get("desc2", ""),        # desc2 -> footer  (desc3 dropped)
+        "startDate": rec.get("start_date", ""),
+        "endDate": rec.get("end_date", ""),
+        "projects": rec.get("projects", []),
+        "mediaGallery": rec.get("assets", []),
+        "isFeatured": rec.get("isFeatured", True),
+        "links": rec.get("links", []),
+    }
+
+
+# Section config: (subfolder, json filename, const name, output file, transform)
+SECTIONS = [
+    ("projects",    "project.json",    "PROJECTS",    "projects.ts",    transform_project),
+    ("artists",     "artist.json",     "ARTISTS",     "artists.ts",     transform_artist),
+    ("exhibitions", "exhibition.json", "EXHIBITIONS", "exhibitions.ts", transform_exhibition),
+]
 
 
 # --------------------------------------------------------------------------- #
@@ -161,7 +202,7 @@ def emit(value, indent):
 
     if isinstance(value, (list, tuple)):
         if not value:
-            return "[\n\n" + pad + "]"   # matches the reference file's empty-array style
+            return "[]"
         items = [f"{child}{emit(v, indent + 2)}" for v in value]
         return "[\n" + ",\n".join(items) + "\n" + pad + "]"
 
@@ -185,7 +226,7 @@ def render_ts(const_name, records):
 # --------------------------------------------------------------------------- #
 #  Reading
 # --------------------------------------------------------------------------- #
-def gather_section(target, subfolder, json_name, order):
+def gather_section(target, subfolder, json_name, transform):
     """Return (records, folder_count) for one section, or (None, 0) if the
     subfolder doesn't exist. Aborts on malformed JSON."""
     section_dir = os.path.join(target, subfolder)
@@ -206,7 +247,7 @@ def gather_section(target, subfolder, json_name, order):
         except (json.JSONDecodeError, OSError) as e:
             error(f"Could not read {jpath}: {e}")
             sys.exit(1)
-        records.append(transform_record(rec, order))
+        records.append(transform(rec))
     return records, len(folders)
 
 
@@ -243,8 +284,8 @@ def main():
 
     # ----- read & transform -----
     sections = []   # (const_name, out_file, records, folder_count, present)
-    for subfolder, json_name, const_name, out_file, order in SECTIONS:
-        records, folder_count = gather_section(args.target, subfolder, json_name, order)
+    for subfolder, json_name, const_name, out_file, transform in SECTIONS:
+        records, folder_count = gather_section(args.target, subfolder, json_name, transform)
         present = records is not None
         sections.append((const_name, out_file, records or [], folder_count, present))
 
