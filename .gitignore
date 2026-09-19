@@ -105,3 +105,5 @@ dist
 
 .DS_Store
 react-app/build
+temp/
+build/
