@@ -8,12 +8,14 @@ import ProjectPage from './pages/ProjectPage';
 import ExhibitionPage from './pages/ExhibitionPage';
 import AppHeader from './components/AppHeader';
 import AppFooter from './components/AppFooter';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
       <div className='app-wrapper'>
         <AppHeader />
+        <ScrollToTop />
         <Routes>
           {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/exhibition/" element={<ExhibitionPage />} />
