@@ -13,13 +13,17 @@ TypeScript data files:
     exhibitions/*/exhibition.json ->  build/exhibitions.ts  (export const EXHIBITIONS)
 
 Usage:
-    nmgallery-ts-builder <target-folder> [-o build]
+    nmgallery-ts-builder <target-folder> [-o build] [--no-media]
+
+Besides the three .ts files, it assembles <out>/media/<project-id>/ by copying
+each project's header.jpg and gallery files (the paths referenced in the .ts),
+ready to drop into a React app's public/media/.  --no-media skips this.
 
 Schema translation (JSON -> .ts model), per entity:
 
   PROJECTS:
     title            -> name
-    assets           -> mediaGallery
+    assets ["x.jpg"] -> mediaGallery ["media/<id>/x.jpg"]  (each prefixed)
     img "x.jpg"      -> "media/<id>/x.jpg"
     year             -> dropped
     order: id, name, img, desc, artists, medium, exhibitions, mediaGallery, links
@@ -134,7 +138,8 @@ def transform_project(rec):
         "artists": rec.get("artists", []),
         "medium": rec.get("medium", ""),
         "exhibitions": rec.get("exhibitions", []),
-        "mediaGallery": rec.get("assets", []),
+        # each gallery file lives under media/<id>/ (bare filenames in project.json)
+        "mediaGallery": [_media(rid, a) if a else a for a in rec.get("assets", [])],
         "links": rec.get("links", []),
     }
 
@@ -252,6 +257,38 @@ def gather_section(target, subfolder, json_name, transform):
 
 
 # --------------------------------------------------------------------------- #
+#  Media assembly
+# --------------------------------------------------------------------------- #
+def collect_media(sections, target, out):
+    """Plan copies of files referenced by img / mediaGallery (paths under media/).
+    Source is <target>/<subfolder>/<id>/<basename>; dest is <out>/<ref>.
+    Returns (copies[(src,dst)], missing[(id,ref)])."""
+    copies, missing, seen = [], [], set()
+    empty = 0                         # projects with no gallery media yet (skipped)
+    for subfolder, const_name, out_file, records, folder_count, present in sections:
+        if not present or subfolder != "projects":
+            continue
+        for rec in records:
+            rid = rec.get("id", "")
+            gallery = [m for m in rec.get("mediaGallery", []) if isinstance(m, str)]
+            if not gallery:           # not processed by the muxer yet — skip entirely
+                empty += 1
+                continue
+            refs = ([rec["img"]] if isinstance(rec.get("img"), str) else []) + gallery
+            for ref in refs:
+                if not ref.startswith("media/") or ref in seen:
+                    continue
+                seen.add(ref)
+                src = os.path.join(target, subfolder, rid, os.path.basename(ref))
+                dst = os.path.join(out, ref)
+                if os.path.isfile(src):
+                    copies.append((src, dst))
+                else:
+                    missing.append((rid, ref))
+    return copies, missing, empty
+
+
+# --------------------------------------------------------------------------- #
 #  Main
 # --------------------------------------------------------------------------- #
 def main():
@@ -262,6 +299,8 @@ def main():
     parser.add_argument("target", help="Folder containing projects/ artists/ exhibitions/")
     parser.add_argument("-o", "--out", default="build",
                         help="Output folder for the .ts files (default: build)")
+    parser.add_argument("--no-media", action="store_true",
+                        help="Only write the .ts files; do not copy the media/ tree")
     args = parser.parse_args()
 
     if not os.path.isdir(args.target):
@@ -283,30 +322,45 @@ def main():
     info(f"Target: {args.target}")
 
     # ----- read & transform -----
-    sections = []   # (const_name, out_file, records, folder_count, present)
+    sections = []   # (subfolder, const_name, out_file, records, folder_count, present)
     for subfolder, json_name, const_name, out_file, transform in SECTIONS:
         records, folder_count = gather_section(args.target, subfolder, json_name, transform)
         present = records is not None
-        sections.append((const_name, out_file, records or [], folder_count, present))
+        sections.append((subfolder, const_name, out_file, records or [], folder_count, present))
 
     if not any(present for *_, present in sections):
         error("None of projects/ artists/ exhibitions/ were found in the target folder.")
         sys.exit(1)
 
+    # ----- plan media copies (files referenced by img / mediaGallery under media/) -----
+    media_copies, media_missing, media_empty = ([], [], 0)
+    if not args.no_media:
+        media_copies, media_missing, media_empty = collect_media(sections, args.target, args.out)
+
     # ----- plan -----
     banner("Plan")
     print(f"  {C.BOLD}Output folder{C.RESET} : {args.out}/")
-    for const_name, out_file, records, folder_count, present in sections:
+    for subfolder, const_name, out_file, records, folder_count, present in sections:
         if present:
             print(f"  {C.BOLD}{out_file}{C.RESET}  {C.GREY}—{C.RESET} "
                   f"export const {C.CYAN}{const_name}{C.RESET} "
                   f"({C.GREEN}{len(records)}{C.RESET} item(s))")
         else:
             print(f"  {C.GREY}{out_file}  — skipped (no matching folder){C.RESET}")
+    if args.no_media:
+        print(f"  {C.BOLD}media/{C.RESET}          : {C.GREY}skipped (--no-media){C.RESET}")
+    else:
+        folders_touched = len({os.path.dirname(dst) for _, dst in media_copies})
+        print(f"  {C.BOLD}media/{C.RESET}          : {C.GREEN}{len(media_copies)}{C.RESET} "
+              f"file(s) → {args.out}/media/ ({folders_touched} folder(s))")
+        if media_empty:
+            print(f"    {C.GREY}{media_empty} project(s) have no media yet — skipped{C.RESET}")
+        if media_missing:
+            print(f"    {C.YELLOW}{len(media_missing)} referenced file(s) missing on disk{C.RESET}")
 
     # ----- preview one transformed record per section -----
     banner("Example output")
-    for const_name, out_file, records, folder_count, present in sections:
+    for subfolder, const_name, out_file, records, folder_count, present in sections:
         if not present or not records:
             continue
         print(f"\n  {C.BOLD}{out_file}{C.RESET} {C.GREY}(first of {len(records)}){C.RESET}")
@@ -333,7 +387,7 @@ def main():
     # ----- write -----
     banner("Writing")
     os.makedirs(args.out, exist_ok=True)
-    for const_name, out_file, records, folder_count, present in sections:
+    for subfolder, const_name, out_file, records, folder_count, present in sections:
         if not present:
             continue
         path = os.path.join(args.out, out_file)
@@ -341,8 +395,24 @@ def main():
             f.write(render_ts(const_name, records))
         ok(f"{out_file}  {C.GREY}({len(records)} item(s)){C.RESET}")
 
+    # ----- copy media tree -----
+    if not args.no_media and media_copies:
+        step(f"media/  {C.GREY}({len(media_copies)} file(s)){C.RESET}")
+        copied = 0
+        for src, dst in media_copies:
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+            shutil.copy2(src, dst)
+            copied += 1
+        ok(f"copied {copied} file(s) into {args.out}/media/")
+    if media_missing:
+        banner("Flags — referenced media missing on disk")
+        for rid, ref in media_missing:
+            warn(f"{rid}: {ref}")
+
     banner("Done")
     print(f"  {C.GREEN}✔{C.RESET} TypeScript data written to {C.BOLD}{args.out}/{C.RESET}")
+    if not args.no_media:
+        print(f"  {C.GREY}Move {args.out}/media/ into your React app's public/media/{C.RESET}")
     print()
 
 
