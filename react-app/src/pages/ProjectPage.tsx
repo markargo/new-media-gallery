@@ -14,6 +14,38 @@ interface ProjectPageProps {
 const ProjectPage: React.FC<ProjectPageProps> = () => {
   const { id } = useParams();
 
+  // Lightbox state: which set of images is open, and the active index.
+  const [lightbox, setLightbox] = React.useState<{ images: string[]; index: number } | null>(null);
+
+  const closeLightbox = React.useCallback(() => setLightbox(null), []);
+
+  const stepLightbox = React.useCallback((delta: number) => {
+    setLightbox(prev =>
+      prev
+        ? { ...prev, index: (prev.index + delta + prev.images.length) % prev.images.length }
+        : prev
+    );
+  }, []);
+
+  // Keyboard controls + body scroll lock while the lightbox is open.
+  React.useEffect(() => {
+    if (!lightbox) {
+      return;
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { closeLightbox(); }
+      else if (e.key === 'ArrowRight') { stepLightbox(1); }
+      else if (e.key === 'ArrowLeft') { stepLightbox(-1); }
+    };
+    window.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightbox, closeLightbox, stepLightbox]);
+
 
   const renderTextTitle = (text: string) => {
     return (
@@ -22,7 +54,7 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
       </div>
     );
   }
-  
+
   const renderTextBlock = (text: string) => {
     return (
       <div className='text-block'>
@@ -30,7 +62,7 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
       </div>
     );
   }
-  
+
   const renderTextSection = (title: string, text: string) => {
     return (
       <div className='text-section'>
@@ -56,8 +88,8 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
         { project ? project.name : 'Project' }
       </div>,
       <div className='header-title-artists'>
-        by&nbsp; 
-        { 
+        by&nbsp;
+        {
           project?.artists.map((aid, index) => {
             const artist = SITE_DATA.artists.find(a => a.id === aid) || UNKNOWN_ARTIST;
             const bits: JSX.Element[] = [
@@ -101,6 +133,88 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
     );
   }
 
+  const renderGallery = (project: Project) => {
+    const images = project?.mediaGallery ?? [];
+    if (images.length === 0) {
+      return null;
+    }
+    return (
+      <div className='project-gallery'>
+        { renderTextTitle('Gallery') }
+        <div className='gallery-grid'>
+          {
+            images.map((src, index) => (
+              <button
+                type='button'
+                className='gallery-tile'
+                key={ index }
+                onClick={ () => setLightbox({ images, index }) }
+                aria-label={ `View image ${index + 1} of ${images.length}` }
+              >
+                <img
+                  src={ '/' + src }
+                  alt={ `${project.name} — image ${index + 1}` }
+                  loading='lazy'
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_IMAGE_LG; }}
+                />
+              </button>
+            ))
+          }
+        </div>
+      </div>
+    );
+  }
+
+  const renderLightbox = () => {
+    if (!lightbox) {
+      return null;
+    }
+    const { images, index } = lightbox;
+    const hasMany = images.length > 1;
+    return (
+      <div className='lightbox' role='dialog' aria-modal='true' onClick={ closeLightbox }>
+        <button className='lightbox-close' type='button' aria-label='Close' onClick={ closeLightbox }>
+          &times;
+        </button>
+        {
+          hasMany &&
+          <button
+            className='lightbox-nav lightbox-prev'
+            type='button'
+            aria-label='Previous image'
+            onClick={(e) => { e.stopPropagation(); stepLightbox(-1); }}
+          >
+            &#8249;
+          </button>
+        }
+        <img
+          className='lightbox-image'
+          src={ '/' + images[index] }
+          alt={ `Image ${index + 1} of ${images.length}` }
+          onClick={(e) => e.stopPropagation()}
+          onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_IMAGE_LG; }}
+        />
+        {
+          hasMany &&
+          <button
+            className='lightbox-nav lightbox-next'
+            type='button'
+            aria-label='Next image'
+            onClick={(e) => { e.stopPropagation(); stepLightbox(1); }}
+          >
+            &#8250;
+          </button>
+        }
+        {
+          hasMany &&
+          <div className='lightbox-counter' onClick={(e) => e.stopPropagation()}>
+            { index + 1 } / { images.length }
+          </div>
+        }
+      </div>
+    );
+  }
+
   const renderExhibitions = (project: Project) => {
     if (!project || !project.exhibitions || project.exhibitions.length === 0) {
       return null;
@@ -123,6 +237,7 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
         { renderHeaderImage(project) }
         { renderHeaderTitle(project) }
         { renderStatement(project) }
+        { renderGallery(project) }
         { renderLinks(project) }
         { renderExhibitions(project) }
         {/* /* renderHeaderTitle() */
@@ -149,6 +264,7 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
         id ? renderProject() : renderProjectList()
       }
       </div>
+      { renderLightbox() }
     </div>
   );
 
