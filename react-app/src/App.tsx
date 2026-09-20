@@ -26,7 +26,7 @@ function App() {
           <Route path="/project/:id" element={<ProjectPage />} />
           <Route path="/" element={<Navigate to={"/exhibition/NM26-madeof"} replace />}/>
         </Routes>
-        {/* <AppFooter /> */}
+        <AppFooter />
       </div>
     </Router>
   );

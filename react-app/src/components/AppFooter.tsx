@@ -1,5 +1,6 @@
 import React from 'react';
 import './AppFooter.scss';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 interface AppFooterProps {
@@ -11,7 +12,9 @@ const AppFooter: React.FC<AppFooterProps> = () => {
 
   return (
     <div className='footer-wrapper'>
-      Made by someone at some point in time for some reason.
+        <Link to='https://www.torontomu.ca/new-media/' target='_blank' rel='noopener noreferrer'>
+          <img className='footer-logo' src={'/footer/new-media-logo.png'} alt='Logo' />
+        </Link>
     </div>
   );
 };
