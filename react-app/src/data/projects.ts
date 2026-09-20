@@ -11,7 +11,12 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-a-soft-reset/IMG_001.jpg",
+      "media/NM26-a-soft-reset/IMG_002.jpg",
+      "media/NM26-a-soft-reset/IMG_003.jpg",
+      "media/NM26-a-soft-reset/IMG_004.jpg"
+    ],
     links: []
   },
   {
@@ -26,7 +31,17 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-base-machina/IMG_001.jpg",
+      "media/NM26-base-machina/IMG_002.jpg",
+      "media/NM26-base-machina/IMG_003.jpg",
+      "media/NM26-base-machina/IMG_004.jpg",
+      "media/NM26-base-machina/IMG_005.jpg",
+      "media/NM26-base-machina/IMG_006.jpg",
+      "media/NM26-base-machina/IMG_007.jpg",
+      "media/NM26-base-machina/IMG_008.jpg",
+      "media/NM26-base-machina/IMG_009.jpg"
+    ],
     links: []
   },
   {
@@ -41,7 +56,19 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-between-light-and-time/IMG_001.jpg",
+      "media/NM26-between-light-and-time/IMG_002.jpg",
+      "media/NM26-between-light-and-time/IMG_003.jpg",
+      "media/NM26-between-light-and-time/IMG_004.jpg",
+      "media/NM26-between-light-and-time/IMG_005.jpg",
+      "media/NM26-between-light-and-time/IMG_006.jpg",
+      "media/NM26-between-light-and-time/IMG_007.jpg",
+      "media/NM26-between-light-and-time/IMG_008.jpg",
+      "media/NM26-between-light-and-time/IMG_009.jpg",
+      "media/NM26-between-light-and-time/IMG_010.jpg",
+      "media/NM26-between-light-and-time/IMG_011.jpg"
+    ],
     links: []
   },
   {
@@ -56,7 +83,11 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-cycle-sense/IMG_001.jpg",
+      "media/NM26-cycle-sense/IMG_002.jpg",
+      "media/NM26-cycle-sense/IMG_003.jpg"
+    ],
     links: []
   },
   {
@@ -71,7 +102,11 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-da-yi-ma/IMG_001.jpg",
+      "media/NM26-da-yi-ma/IMG_002.jpg",
+      "media/NM26-da-yi-ma/IMG_003.jpg"
+    ],
     links: []
   },
   {
@@ -86,7 +121,27 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_001.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_002.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_003.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_004.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_005.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_006.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_007.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_008.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_009.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_010.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_011.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_012.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_013.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_014.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_015.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_016.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_017.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_018.jpg",
+      "media/NM26-daughter-identity-and-memory-a-lived-experience/IMG_019.jpg"
+    ],
     links: []
   },
   {
@@ -101,7 +156,11 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-do-u-remember/IMG_001.png",
+      "media/NM26-do-u-remember/IMG_002.png",
+      "media/NM26-do-u-remember/IMG_003.png"
+    ],
     links: []
   },
   {
@@ -116,7 +175,15 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-emac-early-micro-controlled-animatronic-concept/IMG_001.jpg",
+      "media/NM26-emac-early-micro-controlled-animatronic-concept/IMG_002.jpg",
+      "media/NM26-emac-early-micro-controlled-animatronic-concept/IMG_003.jpg",
+      "media/NM26-emac-early-micro-controlled-animatronic-concept/IMG_004.jpg",
+      "media/NM26-emac-early-micro-controlled-animatronic-concept/IMG_005.jpg",
+      "media/NM26-emac-early-micro-controlled-animatronic-concept/IMG_006.jpg",
+      "media/NM26-emac-early-micro-controlled-animatronic-concept/IMG_007.jpg"
+    ],
     links: []
   },
   {
@@ -131,7 +198,14 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-emotion-bottle/IMG_001.jpg",
+      "media/NM26-emotion-bottle/IMG_002.jpg",
+      "media/NM26-emotion-bottle/IMG_003.jpg",
+      "media/NM26-emotion-bottle/IMG_004.jpg",
+      "media/NM26-emotion-bottle/IMG_005.jpg",
+      "media/NM26-emotion-bottle/IMG_006.jpg"
+    ],
     links: []
   },
   {
@@ -146,7 +220,16 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-field-pack-pc/IMG_001.jpg",
+      "media/NM26-field-pack-pc/IMG_002.jpg",
+      "media/NM26-field-pack-pc/IMG_003.jpg",
+      "media/NM26-field-pack-pc/IMG_004.jpg",
+      "media/NM26-field-pack-pc/IMG_005.jpg",
+      "media/NM26-field-pack-pc/IMG_006.jpg",
+      "media/NM26-field-pack-pc/IMG_007.jpg",
+      "media/NM26-field-pack-pc/IMG_008.jpg"
+    ],
     links: []
   },
   {
@@ -161,7 +244,15 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-fishing-for-compliments/IMG_001.jpg",
+      "media/NM26-fishing-for-compliments/IMG_002.png",
+      "media/NM26-fishing-for-compliments/IMG_003.png",
+      "media/NM26-fishing-for-compliments/IMG_004.png",
+      "media/NM26-fishing-for-compliments/IMG_005.jpg",
+      "media/NM26-fishing-for-compliments/IMG_006.png",
+      "media/NM26-fishing-for-compliments/IMG_007.png"
+    ],
     links: []
   },
   {
@@ -176,7 +267,13 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-green-threads/IMG_001.jpg",
+      "media/NM26-green-threads/IMG_002.jpg",
+      "media/NM26-green-threads/IMG_003.jpg",
+      "media/NM26-green-threads/IMG_004.jpg",
+      "media/NM26-green-threads/IMG_005.jpg"
+    ],
     links: []
   },
   {
@@ -191,7 +288,13 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-growing-into-melancholy/IMG_001.jpg",
+      "media/NM26-growing-into-melancholy/IMG_002.jpg",
+      "media/NM26-growing-into-melancholy/IMG_003.jpg",
+      "media/NM26-growing-into-melancholy/IMG_004.jpg",
+      "media/NM26-growing-into-melancholy/IMG_005.png"
+    ],
     links: []
   },
   {
@@ -221,7 +324,13 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-holding-on-to-colour/IMG_001.jpg",
+      "media/NM26-holding-on-to-colour/IMG_002.jpg",
+      "media/NM26-holding-on-to-colour/IMG_003.jpg",
+      "media/NM26-holding-on-to-colour/IMG_004.jpg",
+      "media/NM26-holding-on-to-colour/IMG_005.jpg"
+    ],
     links: []
   },
   {
@@ -236,7 +345,23 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-house-of-longing/IMG_001.png",
+      "media/NM26-house-of-longing/IMG_002.jpg",
+      "media/NM26-house-of-longing/IMG_003.jpg",
+      "media/NM26-house-of-longing/IMG_004.jpg",
+      "media/NM26-house-of-longing/IMG_005.jpg",
+      "media/NM26-house-of-longing/IMG_006.jpg",
+      "media/NM26-house-of-longing/IMG_007.jpg",
+      "media/NM26-house-of-longing/IMG_008.jpg",
+      "media/NM26-house-of-longing/IMG_009.png",
+      "media/NM26-house-of-longing/IMG_010.png",
+      "media/NM26-house-of-longing/IMG_011.png",
+      "media/NM26-house-of-longing/IMG_012.png",
+      "media/NM26-house-of-longing/IMG_013.png",
+      "media/NM26-house-of-longing/IMG_014.png",
+      "media/NM26-house-of-longing/IMG_015.png"
+    ],
     links: []
   },
   {
@@ -251,7 +376,12 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-intelligence/IMG_001.jpg",
+      "media/NM26-intelligence/IMG_002.jpg",
+      "media/NM26-intelligence/IMG_003.jpg",
+      "media/NM26-intelligence/IMG_004.jpg"
+    ],
     links: []
   },
   {
@@ -266,7 +396,11 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-knucklebox/IMG_001.jpg",
+      "media/NM26-knucklebox/IMG_002.jpg",
+      "media/NM26-knucklebox/IMG_003.jpg"
+    ],
     links: []
   },
   {
@@ -281,7 +415,13 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-light-box-drawings/IMG_001.jpg",
+      "media/NM26-light-box-drawings/IMG_002.jpg",
+      "media/NM26-light-box-drawings/IMG_003.jpg",
+      "media/NM26-light-box-drawings/IMG_004.jpg",
+      "media/NM26-light-box-drawings/IMG_005.jpg"
+    ],
     links: []
   },
   {
@@ -296,7 +436,16 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-lumidi/IMG_001.jpg",
+      "media/NM26-lumidi/IMG_002.jpg",
+      "media/NM26-lumidi/IMG_003.jpg",
+      "media/NM26-lumidi/IMG_004.jpg",
+      "media/NM26-lumidi/IMG_005.jpg",
+      "media/NM26-lumidi/IMG_006.jpg",
+      "media/NM26-lumidi/IMG_007.jpg",
+      "media/NM26-lumidi/IMG_008.jpg"
+    ],
     links: []
   },
   {
@@ -311,7 +460,13 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-makerspace/IMG_001.jpg",
+      "media/NM26-makerspace/IMG_002.jpg",
+      "media/NM26-makerspace/IMG_003.jpg",
+      "media/NM26-makerspace/IMG_004.jpg",
+      "media/NM26-makerspace/IMG_005.jpg"
+    ],
     links: []
   },
   {
@@ -341,7 +496,12 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-mistake/IMG_001.png",
+      "media/NM26-mistake/IMG_002.jpg",
+      "media/NM26-mistake/IMG_003.jpg",
+      "media/NM26-mistake/IMG_004.png"
+    ],
     links: []
   },
   {
@@ -356,7 +516,23 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-monster-trainer/IMG_001.png",
+      "media/NM26-monster-trainer/IMG_002.png",
+      "media/NM26-monster-trainer/IMG_003.png",
+      "media/NM26-monster-trainer/IMG_004.png",
+      "media/NM26-monster-trainer/IMG_005.png",
+      "media/NM26-monster-trainer/IMG_006.png",
+      "media/NM26-monster-trainer/IMG_007.png",
+      "media/NM26-monster-trainer/IMG_008.png",
+      "media/NM26-monster-trainer/IMG_009.png",
+      "media/NM26-monster-trainer/IMG_010.png",
+      "media/NM26-monster-trainer/IMG_011.png",
+      "media/NM26-monster-trainer/IMG_012.png",
+      "media/NM26-monster-trainer/IMG_013.png",
+      "media/NM26-monster-trainer/IMG_014.png",
+      "media/NM26-monster-trainer/IMG_015.png"
+    ],
     links: []
   },
   {
@@ -371,7 +547,18 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-next-gen-air-hockey/IMG_001.jpg",
+      "media/NM26-next-gen-air-hockey/IMG_002.jpg",
+      "media/NM26-next-gen-air-hockey/IMG_003.jpg",
+      "media/NM26-next-gen-air-hockey/IMG_004.jpg",
+      "media/NM26-next-gen-air-hockey/IMG_005.jpg",
+      "media/NM26-next-gen-air-hockey/IMG_006.jpg",
+      "media/NM26-next-gen-air-hockey/IMG_007.jpg",
+      "media/NM26-next-gen-air-hockey/IMG_008.jpg",
+      "media/NM26-next-gen-air-hockey/IMG_009.jpg",
+      "media/NM26-next-gen-air-hockey/IMG_010.jpg"
+    ],
     links: []
   },
   {
@@ -386,7 +573,15 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-nuoc-mam-a-sensory-lineage/IMG_001.jpg",
+      "media/NM26-nuoc-mam-a-sensory-lineage/IMG_002.jpg",
+      "media/NM26-nuoc-mam-a-sensory-lineage/IMG_003.jpg",
+      "media/NM26-nuoc-mam-a-sensory-lineage/IMG_004.jpg",
+      "media/NM26-nuoc-mam-a-sensory-lineage/IMG_005.jpg",
+      "media/NM26-nuoc-mam-a-sensory-lineage/IMG_006.jpg",
+      "media/NM26-nuoc-mam-a-sensory-lineage/IMG_007.jpg"
+    ],
     links: []
   },
   {
@@ -401,7 +596,10 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-phase-based-living/IMG_001.jpg",
+      "media/NM26-phase-based-living/IMG_002.jpg"
+    ],
     links: []
   },
   {
@@ -416,7 +614,11 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-pick/IMG_001.png",
+      "media/NM26-pick/IMG_002.png",
+      "media/NM26-pick/IMG_003.png"
+    ],
     links: []
   },
   {
@@ -431,7 +633,20 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-port-to-profit/IMG_001.jpg",
+      "media/NM26-port-to-profit/IMG_002.jpg",
+      "media/NM26-port-to-profit/IMG_003.jpg",
+      "media/NM26-port-to-profit/IMG_004.jpg",
+      "media/NM26-port-to-profit/IMG_005.jpg",
+      "media/NM26-port-to-profit/IMG_006.jpg",
+      "media/NM26-port-to-profit/IMG_007.jpg",
+      "media/NM26-port-to-profit/IMG_008.jpg",
+      "media/NM26-port-to-profit/IMG_009.png",
+      "media/NM26-port-to-profit/IMG_010.png",
+      "media/NM26-port-to-profit/IMG_011.png",
+      "media/NM26-port-to-profit/IMG_012.png"
+    ],
     links: []
   },
   {
@@ -446,7 +661,13 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-project-holocade/IMG_001.jpg",
+      "media/NM26-project-holocade/IMG_002.jpg",
+      "media/NM26-project-holocade/IMG_003.jpg",
+      "media/NM26-project-holocade/IMG_004.jpg",
+      "media/NM26-project-holocade/IMG_005.jpg"
+    ],
     links: []
   },
   {
@@ -461,7 +682,12 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-prompted/IMG_001.jpg",
+      "media/NM26-prompted/IMG_002.jpg",
+      "media/NM26-prompted/IMG_003.jpg",
+      "media/NM26-prompted/IMG_004.jpg"
+    ],
     links: []
   },
   {
@@ -476,7 +702,23 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-second-skin/IMG_001.jpg",
+      "media/NM26-second-skin/IMG_002.jpg",
+      "media/NM26-second-skin/IMG_003.jpg",
+      "media/NM26-second-skin/IMG_004.jpg",
+      "media/NM26-second-skin/IMG_005.jpg",
+      "media/NM26-second-skin/IMG_006.jpg",
+      "media/NM26-second-skin/IMG_007.jpg",
+      "media/NM26-second-skin/IMG_008.jpg",
+      "media/NM26-second-skin/IMG_009.jpg",
+      "media/NM26-second-skin/IMG_010.jpg",
+      "media/NM26-second-skin/IMG_011.jpg",
+      "media/NM26-second-skin/IMG_012.jpg",
+      "media/NM26-second-skin/IMG_013.jpg",
+      "media/NM26-second-skin/IMG_014.jpg",
+      "media/NM26-second-skin/IMG_015.jpg"
+    ],
     links: []
   },
   {
@@ -493,7 +735,13 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-singularity-souls/IMG_001.png",
+      "media/NM26-singularity-souls/IMG_002.png",
+      "media/NM26-singularity-souls/IMG_003.png",
+      "media/NM26-singularity-souls/IMG_004.png",
+      "media/NM26-singularity-souls/IMG_005.png"
+    ],
     links: []
   },
   {
@@ -508,7 +756,15 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-tane-adam-companion/IMG_001.jpg",
+      "media/NM26-tane-adam-companion/IMG_002.jpg",
+      "media/NM26-tane-adam-companion/IMG_003.jpg",
+      "media/NM26-tane-adam-companion/IMG_004.jpg",
+      "media/NM26-tane-adam-companion/IMG_005.jpg",
+      "media/NM26-tane-adam-companion/IMG_006.jpg",
+      "media/NM26-tane-adam-companion/IMG_007.jpg"
+    ],
     links: []
   },
   {
@@ -523,7 +779,11 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-the-cat-of-riga/IMG_001.jpg",
+      "media/NM26-the-cat-of-riga/IMG_002.jpg",
+      "media/NM26-the-cat-of-riga/IMG_003.jpg"
+    ],
     links: []
   },
   {
@@ -568,7 +828,12 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-we1c0me-t0-my-r00m/IMG_001.jpg",
+      "media/NM26-we1c0me-t0-my-r00m/IMG_002.jpg",
+      "media/NM26-we1c0me-t0-my-r00m/IMG_003.jpg",
+      "media/NM26-we1c0me-t0-my-r00m/IMG_004.jpg"
+    ],
     links: []
   },
   {
@@ -583,7 +848,16 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-who-am-i-when-youre-looking/IMG_001.jpg",
+      "media/NM26-who-am-i-when-youre-looking/IMG_002.jpg",
+      "media/NM26-who-am-i-when-youre-looking/IMG_003.jpg",
+      "media/NM26-who-am-i-when-youre-looking/IMG_004.jpg",
+      "media/NM26-who-am-i-when-youre-looking/IMG_005.jpg",
+      "media/NM26-who-am-i-when-youre-looking/IMG_006.jpg",
+      "media/NM26-who-am-i-when-youre-looking/IMG_007.jpg",
+      "media/NM26-who-am-i-when-youre-looking/IMG_008.jpg"
+    ],
     links: []
   },
   {
@@ -598,7 +872,13 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-yai/IMG_001.jpg",
+      "media/NM26-yai/IMG_002.jpg",
+      "media/NM26-yai/IMG_003.jpg",
+      "media/NM26-yai/IMG_004.jpg",
+      "media/NM26-yai/IMG_005.jpg"
+    ],
     links: []
   },
   {
@@ -613,7 +893,21 @@ export const PROJECTS = [
     exhibitions: [
       "NM26-madeof"
     ],
-    mediaGallery: [],
+    mediaGallery: [
+      "media/NM26-you-never-left/IMG_001.jpg",
+      "media/NM26-you-never-left/IMG_002.jpg",
+      "media/NM26-you-never-left/IMG_003.jpg",
+      "media/NM26-you-never-left/IMG_004.jpg",
+      "media/NM26-you-never-left/IMG_005.jpg",
+      "media/NM26-you-never-left/IMG_006.jpg",
+      "media/NM26-you-never-left/IMG_007.jpg",
+      "media/NM26-you-never-left/IMG_008.jpg",
+      "media/NM26-you-never-left/IMG_009.jpg",
+      "media/NM26-you-never-left/IMG_010.jpg",
+      "media/NM26-you-never-left/IMG_011.jpg",
+      "media/NM26-you-never-left/IMG_012.jpg",
+      "media/NM26-you-never-left/IMG_013.jpg"
+    ],
     links: []
   }
 ];
